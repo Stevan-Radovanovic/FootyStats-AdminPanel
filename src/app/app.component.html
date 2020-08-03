@@ -5,19 +5,12 @@
   <span> Footy Stats</span>
 </mat-toolbar>
 
-<mat-sidenav-container>
-  <mat-sidenav position="start" [(opened)]="opened" mode="push" color="primary">
-    <div class="buttons" style="background-color: aqua;">
-      <hr />
-      <button mat-raised-button color="accent">Players</button>
-      <hr />
-      <button mat-raised-button color="accent">Coaches</button>
-      <hr />
-      <button mat-raised-button color="accent">Contracts</button>
-      <hr />
-      <button mat-raised-button color="accent">Games</button>
-      <hr />
-    </div>
+<mat-sidenav-container color="primary">
+  <mat-sidenav position="start" [(opened)]="opened" mode="push">
+    <button mat-button color="primary">Players</button>
+    <button mat-button color="primary">Coaches</button>
+    <button mat-button color="primary">Contracts</button>
+    <button mat-button color="primary">Games</button>
   </mat-sidenav>
   <mat-sidenav-content>
     <hr />
