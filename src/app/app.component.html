@@ -1,6 +1,14 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button (click)="toggleSideMenu()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span> Footy Stats</span>
+</mat-toolbar>
+
 <mat-sidenav-container>
-  <mat-sidenav position="start" [(opened)]="opened">
-    <div class="buttons">
+  <mat-sidenav position="start" [(opened)]="opened" mode="push" color="primary">
+    <div class="buttons" style="background-color: aqua;">
+      <hr />
       <button mat-raised-button color="accent">Players</button>
       <hr />
       <button mat-raised-button color="accent">Coaches</button>
@@ -8,11 +16,21 @@
       <button mat-raised-button color="accent">Contracts</button>
       <hr />
       <button mat-raised-button color="accent">Games</button>
+      <hr />
     </div>
   </mat-sidenav>
   <mat-sidenav-content>
-    <button mat-raised-button color="accent" (click)="toggleSideMenu()">
-      Open
-    </button>
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
+    <hr />
   </mat-sidenav-content>
 </mat-sidenav-container>
