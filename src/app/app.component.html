@@ -8,22 +8,11 @@
 <mat-sidenav-container color="primary">
   <mat-sidenav position="start" [(opened)]="opened" mode="push">
     <button mat-button color="primary">Players</button>
-    <button mat-button color="primary">Coaches</button>
-    <button mat-button color="primary">Contracts</button>
     <button mat-button color="primary">Games</button>
   </mat-sidenav>
   <mat-sidenav-content>
     <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
-    <hr />
+    <router-outlet></router-outlet>
     <hr />
   </mat-sidenav-content>
 </mat-sidenav-container>
