@@ -1,3 +1,7 @@
 .buttons button {
   display: block;
 }
+
+mat-sidenav {
+  width: 200px;
+}

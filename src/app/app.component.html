@@ -1,11 +1,18 @@
 <mat-sidenav-container>
-  <mat-sidenav>
+  <mat-sidenav position="start" [(opened)]="opened">
     <div class="buttons">
       <button mat-raised-button color="accent">Players</button>
+      <hr />
       <button mat-raised-button color="accent">Coaches</button>
+      <hr />
       <button mat-raised-button color="accent">Contracts</button>
+      <hr />
       <button mat-raised-button color="accent">Games</button>
     </div>
   </mat-sidenav>
-  <mat-sidenav-content>Main</mat-sidenav-content>
+  <mat-sidenav-content>
+    <button mat-raised-button color="accent" (click)="toggleSideMenu()">
+      Open
+    </button>
+  </mat-sidenav-content>
 </mat-sidenav-container>
