@@ -8,8 +8,33 @@
 <mat-sidenav-container color="primary">
   <mat-sidenav position="start" [(opened)]="opened" mode="push">
     <hr />
-    <button mat-button color="primary">Players</button>
-    <button mat-button color="primary">Games</button>
+    <button
+      [routerLink]="['/home']"
+      routerLinkActive="router-link-active"
+      (click)="toggleSideMenu()"
+      mat-button
+      color="primary"
+    >
+      Home
+    </button>
+    <button
+      [routerLink]="['/players']"
+      routerLinkActive="router-link-active"
+      (click)="toggleSideMenu()"
+      mat-button
+      color="primary"
+    >
+      Players
+    </button>
+    <button
+      [routerLink]="['/games']"
+      routerLinkActive="router-link-active"
+      (click)="toggleSideMenu()"
+      mat-button
+      color="primary"
+    >
+      Games
+    </button>
     <hr />
   </mat-sidenav>
   <mat-sidenav-content style="overflow: hidden;">
