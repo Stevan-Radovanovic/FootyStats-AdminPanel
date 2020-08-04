@@ -1,15 +1,15 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Game } from 'src/app/shared/models/game.model';
 
 @Component({
   selector: 'app-game-item',
   templateUrl: './game-item.component.html',
-  styleUrls: ['./game-item.component.css']
+  styleUrls: ['./game-item.component.css'],
 })
 export class GameItemComponent implements OnInit {
+  @Input() game: Game;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit(): void {
-  }
-
+  ngOnInit(): void {}
 }

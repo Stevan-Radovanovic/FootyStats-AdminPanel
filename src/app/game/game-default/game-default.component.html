@@ -1,1 +1,5 @@
-<p>game-default works!</p>
+<div class="columns is-multiline">
+  <div class="column is-4" *ngFor="let game of games">
+    <app-game-item [game]="game"></app-game-item>
+  </div>
+</div>
