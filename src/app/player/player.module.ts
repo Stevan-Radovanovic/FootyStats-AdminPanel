@@ -8,11 +8,18 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
+import { PlayerEditComponent } from './player-edit/player-edit.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [PlayerDefaultComponent, PlayerItemComponent],
+  declarations: [
+    PlayerDefaultComponent,
+    PlayerItemComponent,
+    PlayerEditComponent,
+  ],
   imports: [
     CommonModule,
+    ReactiveFormsModule,
     PlayerRoutingModule,
     MatCardModule,
     SharedModule,
