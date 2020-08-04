@@ -7,10 +7,12 @@
 
 <mat-sidenav-container color="primary">
   <mat-sidenav position="start" [(opened)]="opened" mode="push">
+    <hr />
     <button mat-button color="primary">Players</button>
     <button mat-button color="primary">Games</button>
+    <hr />
   </mat-sidenav>
-  <mat-sidenav-content>
+  <mat-sidenav-content style="overflow: hidden;">
     <hr />
     <router-outlet></router-outlet>
     <hr />
