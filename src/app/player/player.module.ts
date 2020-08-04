@@ -10,6 +10,7 @@ import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     SharedModule,
     MatButtonModule,
     MatIconModule,
+    MatInputModule,
   ],
 })
 export class PlayerModule {}

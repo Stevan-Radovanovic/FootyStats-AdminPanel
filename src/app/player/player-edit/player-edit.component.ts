@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-player-edit',
@@ -8,8 +9,20 @@ import { Player } from 'src/app/shared/models/player.model';
 })
 export class PlayerEditComponent implements OnInit {
   @Input() player: Player;
+  editPlayerForm: FormGroup;
 
   constructor() {}
 
-  ngOnInit(): void {}
+  initForm() {
+    this.editPlayerForm = new FormGroup({
+      fullName: new FormControl('', [Validators.required]),
+      position: new FormControl('', [Validators.required]),
+      shirtNumber: new FormControl('', [Validators.required]),
+      dateOfBirth: new FormControl('', [Validators.required]),
+    });
+  }
+
+  ngOnInit(): void {
+    this.initForm();
+  }
 }
