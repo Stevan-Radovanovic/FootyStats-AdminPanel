@@ -1,1 +1,5 @@
-<p>player-default works!</p>
+<div class="columns is-multiline">
+  <div class="columns is-4" *ngFor="let player of players">
+    <app-player-item [player]="player"></app-player-item>
+  </div>
+</div>

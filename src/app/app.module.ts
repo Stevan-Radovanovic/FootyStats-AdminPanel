@@ -10,6 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { HomePageComponent } from './home-page/home-page.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
@@ -21,6 +22,7 @@ import { HomePageComponent } from './home-page/home-page.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    SharedModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
