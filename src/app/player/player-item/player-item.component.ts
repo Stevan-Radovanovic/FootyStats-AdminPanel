@@ -10,11 +10,16 @@ export class PlayerItemComponent implements OnInit {
   @Input() player: Player;
 
   deleteModalOpened = false;
+  editModalOpened = false;
 
   constructor() {}
 
   toggleDeleteModal() {
     this.deleteModalOpened = !this.deleteModalOpened;
+  }
+
+  toggleEditModal() {
+    this.editModalOpened = !this.editModalOpened;
   }
 
   ngOnInit(): void {}

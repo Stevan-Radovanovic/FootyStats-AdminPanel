@@ -14,7 +14,7 @@
       <mat-icon>videogame_asset</mat-icon>
       Games
     </button>
-    <button mat-button color="accent">
+    <button mat-button color="accent" (click)="toggleEditModal()">
       <mat-icon>edit</mat-icon>
       Edit
     </button>
@@ -35,7 +35,6 @@
     <mat-card>
       <mat-card-header>
         <mat-card-title>Deleting {{ player.fullName }}!</mat-card-title>
-        <mat-card-subtitle>Are you sure?</mat-card-subtitle>
       </mat-card-header>
       <mat-card-actions>
         <button mat-button color="warn">
@@ -53,5 +52,32 @@
     class="modal-close is-large"
     aria-label="close"
     (click)="toggleDeleteModal()"
+  ></button>
+</div>
+
+<div class="modal" id="editmodal" [ngClass]="{ 'is-active': editModalOpened }">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Editing {{ player.fullName }}!</mat-card-title>
+        <mat-card-subtitle>Are you sure?</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button color="primary">
+          <mat-icon>save</mat-icon>
+          Save
+        </button>
+        <button mat-button color="warn" (click)="toggleEditModal()">
+          <mat-icon>not_interested</mat-icon>
+          Quit
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="toggleEditModal()"
   ></button>
 </div>
