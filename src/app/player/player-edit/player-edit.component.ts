@@ -15,10 +15,14 @@ export class PlayerEditComponent implements OnInit {
 
   initForm() {
     this.editPlayerForm = new FormGroup({
-      fullName: new FormControl('', [Validators.required]),
-      position: new FormControl('', [Validators.required]),
-      shirtNumber: new FormControl('', [Validators.required]),
-      dateOfBirth: new FormControl('', [Validators.required]),
+      fullName: new FormControl(this.player.fullName, [Validators.required]),
+      position: new FormControl(this.player.position, [Validators.required]),
+      shirtNumber: new FormControl(this.player.shirtNumber, [
+        Validators.required,
+      ]),
+      dateOfBirth: new FormControl(this.player.dateOfBirth, [
+        Validators.required,
+      ]),
     });
   }
 

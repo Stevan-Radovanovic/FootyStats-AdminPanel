@@ -6,35 +6,19 @@
     <form [formGroup]="editPlayerForm" id="editPlayer">
       <mat-form-field>
         <mat-label>Name</mat-label>
-        <input
-          matInput
-          value="{{ player.fullName }}"
-          formControlName="fullName"
-        />
+        <input matInput formControlName="fullName" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Date of Birth</mat-label>
-        <input
-          matInput
-          value="{{ player.dateOfBirth }}"
-          formControlName="dateOfBirth"
-        />
+        <input matInput formControlName="dateOfBirth" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Position</mat-label>
-        <input
-          matInput
-          value="{{ player.position }}"
-          formControlName="position"
-        />
+        <input matInput formControlName="position" />
       </mat-form-field>
       <mat-form-field>
         <mat-label>Shirt Number</mat-label>
-        <input
-          matInput
-          value="{{ player.shirtNumber }}"
-          formControlName="shirtNumber"
-        />
+        <input matInput formControlName="shirtNumber" />
       </mat-form-field>
     </form>
   </mat-card-content>
