@@ -1,4 +1,4 @@
-<mat-card class="example-card">
+<mat-card>
   <mat-card-header>
     <mat-card-title
       >{{ player.fullName }} [{{ player.shirtNumber }}]</mat-card-title
@@ -6,7 +6,52 @@
     <mat-card-subtitle>{{ player.position }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
-    <button mat-button color="primary">Contracts</button>
-    <button mat-button color="primary">Games</button>
+    <button mat-button color="primary">
+      <mat-icon>new_releases</mat-icon>
+      Contracts
+    </button>
+    <button mat-button color="primary">
+      <mat-icon>videogame_asset</mat-icon>
+      Games
+    </button>
+    <button mat-button color="accent">
+      <mat-icon>edit</mat-icon>
+      Edit
+    </button>
+    <button mat-button color="warn" (click)="toggleDeleteModal()">
+      <mat-icon>delete</mat-icon>
+      Delete
+    </button>
   </mat-card-actions>
 </mat-card>
+
+<div
+  class="modal"
+  id="deletemodal"
+  [ngClass]="{ 'is-active': deleteModalOpened }"
+>
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <mat-card>
+      <mat-card-header>
+        <mat-card-title>Deleting {{ player.fullName }}!</mat-card-title>
+        <mat-card-subtitle>Are you sure?</mat-card-subtitle>
+      </mat-card-header>
+      <mat-card-actions>
+        <button mat-button color="warn">
+          <mat-icon>check</mat-icon>
+          Yes
+        </button>
+        <button mat-button color="primary" (click)="toggleDeleteModal()">
+          <mat-icon>not_interested</mat-icon>
+          No
+        </button>
+      </mat-card-actions>
+    </mat-card>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="toggleDeleteModal()"
+  ></button>
+</div>

@@ -4,6 +4,7 @@ import { PlayerDefaultComponent } from './player-default/player-default.componen
 import { PlayerRoutingModule } from './player-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { PlayerItemComponent } from './player-item/player-item.component';
+import { MatIconModule } from '@angular/material/icon';
 
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
@@ -16,6 +17,7 @@ import { SharedModule } from '../shared/shared.module';
     MatCardModule,
     SharedModule,
     MatButtonModule,
+    MatIconModule,
   ],
 })
 export class PlayerModule {}

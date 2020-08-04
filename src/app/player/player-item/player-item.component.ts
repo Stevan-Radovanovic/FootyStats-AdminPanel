@@ -9,7 +9,13 @@ import { Player } from 'src/app/shared/models/player.model';
 export class PlayerItemComponent implements OnInit {
   @Input() player: Player;
 
+  deleteModalOpened = false;
+
   constructor() {}
+
+  toggleDeleteModal() {
+    this.deleteModalOpened = !this.deleteModalOpened;
+  }
 
   ngOnInit(): void {}
 }
