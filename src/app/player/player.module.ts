@@ -15,6 +15,9 @@ import { PlayerNewComponent } from './player-new/player-new.component';
 import { MatDividerModule } from '@angular/material/divider';
 import { ContractDefaultComponent } from './contract/contract-default/contract-default.component';
 import { ContractItemComponent } from './contract/contract-item/contract-item.component';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { ContractDeleteComponent } from './contract/contract-delete/contract-delete.component';
+import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { ContractItemComponent } from './contract/contract-item/contract-item.co
     PlayerNewComponent,
     ContractDefaultComponent,
     ContractItemComponent,
+    ContractDeleteComponent,
+    ContractEditComponent,
   ],
   imports: [
     CommonModule,
@@ -35,6 +40,8 @@ import { ContractItemComponent } from './contract/contract-item/contract-item.co
     MatIconModule,
     MatInputModule,
     MatDividerModule,
+    MatBottomSheetModule,
   ],
+  entryComponents: [ContractDeleteComponent, ContractEditComponent],
 })
 export class PlayerModule {}

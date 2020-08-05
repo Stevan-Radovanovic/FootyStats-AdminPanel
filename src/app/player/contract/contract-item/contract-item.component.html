@@ -4,10 +4,20 @@
     <p>Duration: {{ contract.startDate }} - {{ contract.endDate }}</p>
   </mat-card-content>
 
-  <button mat-button color="primary" id="editButton">
+  <button
+    mat-button
+    color="primary"
+    id="editButton"
+    (click)="openEditBottomSheet()"
+  >
     <mat-icon>edit</mat-icon>
   </button>
-  <button mat-button color="warn" id="deleteButton">
+  <button
+    mat-button
+    color="warn"
+    id="deleteButton"
+    (click)="openDeleteBottomSheet()"
+  >
     <mat-icon>delete</mat-icon>
   </button>
   <button mat-button color="accent" id="bonusButton">
