@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { PlayerModalService } from '../player-modal.service';
 
 @Component({
   selector: 'app-player-edit',
@@ -11,7 +12,7 @@ export class PlayerEditComponent implements OnInit {
   @Input() player: Player;
   editPlayerForm: FormGroup;
 
-  constructor() {}
+  constructor(public modalServ: PlayerModalService) {}
 
   initForm() {
     this.editPlayerForm = new FormGroup({

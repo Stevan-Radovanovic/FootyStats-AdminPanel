@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
+import { PlayerModalService } from '../player-modal.service';
 
 @Component({
   selector: 'app-player-item',
@@ -9,18 +10,7 @@ import { Player } from 'src/app/shared/models/player.model';
 export class PlayerItemComponent implements OnInit {
   @Input() player: Player;
 
-  deleteModalOpened = false;
-  editModalOpened = false;
-
-  constructor() {}
-
-  toggleDeleteModal() {
-    this.deleteModalOpened = !this.deleteModalOpened;
-  }
-
-  toggleEditModal() {
-    this.editModalOpened = !this.editModalOpened;
-  }
+  constructor(public modalServ: PlayerModalService) {}
 
   ngOnInit(): void {}
 }

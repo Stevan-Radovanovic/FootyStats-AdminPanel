@@ -14,11 +14,11 @@
       <mat-icon>videogame_asset</mat-icon>
       Games
     </button>
-    <button mat-button color="accent" (click)="toggleEditModal()">
+    <button mat-button color="accent" (click)="modalServ.toggleEditModal()">
       <mat-icon>edit</mat-icon>
       Edit
     </button>
-    <button mat-button color="warn" (click)="toggleDeleteModal()">
+    <button mat-button color="warn" (click)="modalServ.toggleDeleteModal()">
       <mat-icon>delete</mat-icon>
       Delete
     </button>
@@ -28,7 +28,7 @@
 <div
   class="modal"
   id="deletemodal"
-  [ngClass]="{ 'is-active': deleteModalOpened }"
+  [ngClass]="{ 'is-active': modalServ.deleteModalOpened }"
 >
   <div class="modal-background"></div>
   <div class="modal-content">
@@ -42,7 +42,11 @@
           <mat-icon>check</mat-icon>
           Yes
         </button>
-        <button mat-button color="primary" (click)="toggleDeleteModal()">
+        <button
+          mat-button
+          color="primary"
+          (click)="modalServ.toggleDeleteModal()"
+        >
           <mat-icon>not_interested</mat-icon>
           No
         </button>
@@ -52,11 +56,15 @@
   <button
     class="modal-close is-large"
     aria-label="close"
-    (click)="toggleDeleteModal()"
+    (click)="modalServ.toggleDeleteModal()"
   ></button>
 </div>
 
-<div class="modal" id="editmodal" [ngClass]="{ 'is-active': editModalOpened }">
+<div
+  class="modal"
+  id="editmodal"
+  [ngClass]="{ 'is-active': modalServ.editModalOpened }"
+>
   <div class="modal-background"></div>
   <div class="modal-content">
     <app-player-edit [player]="player"></app-player-edit>
@@ -64,6 +72,6 @@
   <button
     class="modal-close is-large"
     aria-label="close"
-    (click)="toggleEditModal()"
+    (click)="modalServ.toggleEditModal()"
   ></button>
 </div>
