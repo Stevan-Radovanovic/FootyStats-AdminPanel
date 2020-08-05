@@ -7,8 +7,13 @@ export class PlayerModalService {
   deleteModalOpened = false;
   editModalOpened = false;
   newModalOpened = false;
+  contractsModalOpened = false;
 
   constructor() {}
+
+  toggleContractsModal() {
+    this.contractsModalOpened = !this.contractsModalOpened;
+  }
 
   toggleNewModal() {
     this.newModalOpened = !this.newModalOpened;

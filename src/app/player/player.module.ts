@@ -13,6 +13,8 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
 import { PlayerNewComponent } from './player-new/player-new.component';
 import { MatDividerModule } from '@angular/material/divider';
+import { ContractDefaultComponent } from './contract/contract-default/contract-default.component';
+import { ContractItemComponent } from './contract/contract-item/contract-item.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { MatDividerModule } from '@angular/material/divider';
     PlayerItemComponent,
     PlayerEditComponent,
     PlayerNewComponent,
+    ContractDefaultComponent,
+    ContractItemComponent,
   ],
   imports: [
     CommonModule,

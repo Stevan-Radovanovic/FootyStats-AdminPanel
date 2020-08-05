@@ -1,1 +1,13 @@
-<p>contract-default works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Contract list</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="columns is-multiline">
+      <div class="column is-12" *ngFor="let contract of contracts">
+        <app-contract-item [contract]="contract"></app-contract-item>
+      </div>
+      <mat-divider></mat-divider>
+    </div>
+  </mat-card-content>
+</mat-card>

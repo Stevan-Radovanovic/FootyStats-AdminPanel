@@ -1,1 +1,16 @@
-<p>contract-item works!</p>
+<mat-card>
+  <mat-card-content>
+    <p>Amount: {{ contract.weeklySalary }}</p>
+    <p>Duration: {{ contract.startDate }} - {{ contract.endDate }}</p>
+  </mat-card-content>
+
+  <button mat-button color="primary" id="editButton">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-button color="warn" id="deleteButton">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button mat-button color="accent" id="bonusButton">
+    Bonuses
+  </button>
+</mat-card>
