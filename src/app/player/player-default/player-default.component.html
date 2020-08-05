@@ -4,6 +4,23 @@
   </div>
 </div>
 
-<button mat-fab color="primary" id="addButton">
+<button
+  mat-fab
+  color="primary"
+  id="addButton"
+  (click)="modalServ.toggleNewModal()"
+>
   <mat-icon>add</mat-icon>
 </button>
+
+<div class="modal" [ngClass]="{ 'is-active': modalServ.newModalOpened }">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <app-player-new></app-player-new>
+  </div>
+  <button
+    class="modal-close is-large"
+    aria-label="close"
+    (click)="modalServ.toggleNewModal()"
+  ></button>
+</div>

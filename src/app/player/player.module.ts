@@ -11,12 +11,15 @@ import { SharedModule } from '../shared/shared.module';
 import { PlayerEditComponent } from './player-edit/player-edit.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { PlayerNewComponent } from './player-new/player-new.component';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
     PlayerDefaultComponent,
     PlayerItemComponent,
     PlayerEditComponent,
+    PlayerNewComponent,
   ],
   imports: [
     CommonModule,
@@ -27,6 +30,7 @@ import { MatInputModule } from '@angular/material/input';
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatDividerModule,
   ],
 })
 export class PlayerModule {}

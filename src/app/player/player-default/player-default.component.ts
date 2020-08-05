@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
+import { PlayerModalService } from '../player-modal.service';
 
 @Component({
   selector: 'app-player-default',
@@ -40,7 +41,7 @@ export class PlayerDefaultComponent implements OnInit {
     },
   ];
 
-  constructor() {}
+  constructor(public modalServ: PlayerModalService) {}
 
   ngOnInit(): void {}
 }
