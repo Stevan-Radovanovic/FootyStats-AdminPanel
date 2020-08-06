@@ -15,11 +15,15 @@ export class ContractItemComponent implements OnInit {
   constructor(private bottomSheet: MatBottomSheet) {}
 
   openEditBottomSheet(): void {
-    this.bottomSheet.open(ContractEditComponent);
+    this.bottomSheet.open(ContractEditComponent, {
+      data: { contract: this.contract },
+    });
   }
 
   openDeleteBottomSheet(): void {
-    this.bottomSheet.open(ContractDeleteComponent);
+    this.bottomSheet.open(ContractDeleteComponent, {
+      data: { contract: this.contract },
+    });
   }
 
   ngOnInit(): void {}

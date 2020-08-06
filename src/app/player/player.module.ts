@@ -48,6 +48,10 @@ import { ContractNewComponent } from './contract/contract-new/contract-new.compo
     MatDatepickerModule,
     MatNativeDateModule,
   ],
-  entryComponents: [ContractDeleteComponent, ContractEditComponent],
+  entryComponents: [
+    ContractDeleteComponent,
+    ContractEditComponent,
+    ContractNewComponent,
+  ],
 })
 export class PlayerModule {}

@@ -3,6 +3,6 @@ New Contract BottomSheet [Done]
 Edit Sheet Design
 New Sheet Design
 Delete Sheet Design
-Connect the ContractItem with a Player
-Replace inputs with datepickers
+Connect the ContractItem with a Player [Done]
+Replace inputs with datepickers [Done]
 Set up an http service
