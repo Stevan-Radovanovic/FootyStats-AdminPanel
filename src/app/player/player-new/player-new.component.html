@@ -8,9 +8,16 @@
         <mat-label>Name</mat-label>
         <input matInput formControlName="fullName" />
       </mat-form-field>
+
       <mat-form-field>
         <mat-label>Date of Birth</mat-label>
-        <input matInput formControlName="dateOfBirth" />
+        <input
+          matInput
+          [matDatepicker]="picker"
+          formControlName="dateOfBirth"
+        />
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <mat-form-field>
         <mat-label>Position</mat-label>
@@ -26,12 +33,14 @@
         <input matInput type="number" formControlName="weeklySalary" />
       </mat-form-field>
       <mat-form-field>
-        <mat-label>Contract Start Date</mat-label>
-        <input matInput formControlName="startDate" />
-      </mat-form-field>
-      <mat-form-field>
-        <mat-label>Contract End Date</mat-label>
-        <input matInput formControlName="endDate" />
+        <mat-date-range-input [rangePicker]="picker">
+          <input
+            matStartDate
+            placeholder="Start date"
+            formControlName="startDate"
+          />
+          <input matEndDate placeholder="End date" formControlName="endDate" />
+        </mat-date-range-input>
       </mat-form-field>
     </form>
   </mat-card-content>

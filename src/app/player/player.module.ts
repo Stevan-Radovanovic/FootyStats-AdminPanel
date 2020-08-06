@@ -5,6 +5,8 @@ import { PlayerRoutingModule } from './player-routing.module';
 import { MatButtonModule } from '@angular/material/button';
 import { PlayerItemComponent } from './player-item/player-item.component';
 import { MatIconModule } from '@angular/material/icon';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 import { MatCardModule } from '@angular/material/card';
 import { SharedModule } from '../shared/shared.module';
@@ -43,6 +45,8 @@ import { ContractNewComponent } from './contract/contract-new/contract-new.compo
     MatInputModule,
     MatDividerModule,
     MatBottomSheetModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ],
   entryComponents: [ContractDeleteComponent, ContractEditComponent],
 })
