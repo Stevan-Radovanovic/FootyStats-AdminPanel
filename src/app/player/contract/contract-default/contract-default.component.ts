@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Contract } from 'src/app/shared/models/contract.model';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { ContractNewComponent } from '../contract-new/contract-new.component';
 
 @Component({
   selector: 'app-contract-default',
@@ -12,7 +14,11 @@ export class ContractDefaultComponent implements OnInit {
     { endDate: new Date(), startDate: new Date(), weeklySalary: 12000 },
   ];
 
-  constructor() {}
+  constructor(private bottomSheet: MatBottomSheet) {}
+
+  openNewBottomSheet(): void {
+    this.bottomSheet.open(ContractNewComponent);
+  }
 
   ngOnInit(): void {}
 }

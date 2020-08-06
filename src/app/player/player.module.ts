@@ -18,6 +18,7 @@ import { ContractItemComponent } from './contract/contract-item/contract-item.co
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ContractDeleteComponent } from './contract/contract-delete/contract-delete.component';
 import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
+import { ContractNewComponent } from './contract/contract-new/contract-new.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,7 @@ import { ContractEditComponent } from './contract/contract-edit/contract-edit.co
     ContractItemComponent,
     ContractDeleteComponent,
     ContractEditComponent,
+    ContractNewComponent,
   ],
   imports: [
     CommonModule,
