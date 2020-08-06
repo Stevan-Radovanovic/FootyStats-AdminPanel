@@ -1,8 +1,8 @@
 <div id="container" style="min-height: 100vh; margin: 0;">
   <mat-toolbar
+    *ngIf="!headerServ.invisible"
     color="primary"
     style="position: sticky; top: 0; z-index: 2;"
-    [ngClass]="{ invisibleHeader: headerServ.invisible }"
   >
     <button mat-icon-button (click)="toggleSideMenu()">
       <mat-icon>menu</mat-icon>
