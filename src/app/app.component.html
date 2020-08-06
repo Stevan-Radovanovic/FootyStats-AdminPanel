@@ -1,45 +1,51 @@
-<mat-toolbar color="primary">
-  <button mat-icon-button (click)="toggleSideMenu()">
-    <mat-icon>menu</mat-icon>
-  </button>
-  <span> Footy Stats</span>
-</mat-toolbar>
+<div id="container" style="min-height: 100vh; margin: 0;">
+  <mat-toolbar
+    color="primary"
+    style="position: sticky; top: 0; z-index: 2;"
+    [ngClass]="{ invisibleHeader: headerServ.invisible }"
+  >
+    <button mat-icon-button (click)="toggleSideMenu()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span> Footy Stats</span>
+  </mat-toolbar>
 
-<mat-sidenav-container color="primary">
-  <mat-sidenav position="start" [(opened)]="opened" mode="push">
-    <hr />
-    <button
-      [routerLink]="['/home']"
-      routerLinkActive="router-link-active"
-      (click)="toggleSideMenu()"
-      mat-button
-      color="primary"
-    >
-      Home
-    </button>
-    <button
-      [routerLink]="['/players']"
-      routerLinkActive="router-link-active"
-      (click)="toggleSideMenu()"
-      mat-button
-      color="primary"
-    >
-      Players
-    </button>
-    <button
-      [routerLink]="['/games']"
-      routerLinkActive="router-link-active"
-      (click)="toggleSideMenu()"
-      mat-button
-      color="primary"
-    >
-      Games
-    </button>
-    <hr />
-  </mat-sidenav>
-  <mat-sidenav-content style="overflow: hidden;">
-    <hr />
-    <router-outlet></router-outlet>
-    <hr />
-  </mat-sidenav-content>
-</mat-sidenav-container>
+  <mat-sidenav-container color="primary">
+    <mat-sidenav position="start" [(opened)]="opened" mode="push">
+      <hr />
+      <button
+        [routerLink]="['/home']"
+        routerLinkActive="router-link-active"
+        (click)="toggleSideMenu()"
+        mat-button
+        color="primary"
+      >
+        Home
+      </button>
+      <button
+        [routerLink]="['/players']"
+        routerLinkActive="router-link-active"
+        (click)="toggleSideMenu()"
+        mat-button
+        color="primary"
+      >
+        Players
+      </button>
+      <button
+        [routerLink]="['/games']"
+        routerLinkActive="router-link-active"
+        (click)="toggleSideMenu()"
+        mat-button
+        color="primary"
+      >
+        Games
+      </button>
+      <hr />
+    </mat-sidenav>
+    <mat-sidenav-content style="overflow: hidden; min-height: 90vh;">
+      <hr />
+      <router-outlet></router-outlet>
+      <hr />
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

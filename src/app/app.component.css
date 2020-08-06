@@ -5,3 +5,7 @@ mat-sidenav button {
 mat-sidenav {
   width: 200px;
 }
+
+.invisibleHeader {
+  visibility: hidden;
+}

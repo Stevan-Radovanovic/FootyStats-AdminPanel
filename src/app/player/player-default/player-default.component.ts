@@ -39,6 +39,78 @@ export class PlayerDefaultComponent implements OnInit {
       shirtNumber: 10,
       position: 'Attacker',
     },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
+    {
+      dateOfBirth: new Date(),
+      fullName: 'Player',
+      shirtNumber: 10,
+      position: 'Attacker',
+    },
   ];
 
   constructor(public modalServ: PlayerModalService) {}
