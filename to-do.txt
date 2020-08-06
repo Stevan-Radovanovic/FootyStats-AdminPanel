@@ -1,5 +1,5 @@
-Add New Contract Button
-New Contract BottomSheet
+Add New Contract Button [Done]
+New Contract BottomSheet [Done]
 Edit Sheet Design
 New Sheet Design
 Delete Sheet Design
