@@ -12,11 +12,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { HomePageComponent } from './home-page/home-page.component';
 import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent],
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     AppRoutingModule,
     BrowserAnimationsModule,

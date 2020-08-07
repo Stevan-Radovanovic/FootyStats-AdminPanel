@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
 import { PlayerModalService } from '../player-modal.service';
+import { PlayerHttpService } from '../player-http.service';
 
 @Component({
   selector: 'app-player-default',

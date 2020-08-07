@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { HeaderService } from './header.service';
+import { PlayerHttpService } from './player/player-http.service';
 
 @Component({
   selector: 'app-root',
@@ -11,7 +12,12 @@ export class AppComponent {
 
   title = 'footyStatsAdminPanel';
 
-  constructor(public headerServ: HeaderService) {}
+  constructor(
+    public headerServ: HeaderService,
+    public playerServ: PlayerHttpService
+  ) {
+    this.playerServ.getPlayers();
+  }
 
   toggleSideMenu() {
     this.opened = !this.opened;
