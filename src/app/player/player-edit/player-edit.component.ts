@@ -18,9 +18,7 @@ export class PlayerEditComponent implements OnInit {
     this.editPlayerForm = new FormGroup({
       fullName: new FormControl(this.player.fullName, [Validators.required]),
       position: new FormControl(this.player.position, [Validators.required]),
-      shirtNumber: new FormControl(this.player.shirtNumber, [
-        Validators.required,
-      ]),
+      shirtNumber: new FormControl(this.player.number, [Validators.required]),
       dateOfBirth: new FormControl(this.player.dateOfBirth, [
         Validators.required,
       ]),

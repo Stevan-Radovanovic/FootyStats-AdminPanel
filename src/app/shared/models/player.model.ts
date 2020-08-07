@@ -5,7 +5,7 @@ export interface Player {
   id?: number;
   fullName: string;
   position: string;
-  shirtNumber: number;
+  number: number;
   dateOfBirth: Date;
   contracts?: Contract[];
   games?: Game[];
