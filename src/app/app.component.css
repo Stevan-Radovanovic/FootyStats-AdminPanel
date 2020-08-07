@@ -7,5 +7,5 @@ mat-sidenav {
 }
 
 .invisibleHeader {
-  visibility: hidden;
+  z-index: -1 !important;
 }
