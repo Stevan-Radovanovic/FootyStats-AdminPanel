@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "footy-front": "ng serve",
+    "footy-back": "node ../../NodeSql/src/app.mjs",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
