@@ -52,6 +52,7 @@ import { ContractNewComponent } from './contract/contract-new/contract-new.compo
     ContractDeleteComponent,
     ContractEditComponent,
     ContractNewComponent,
+    PlayerNewComponent,
   ],
 })
 export class PlayerModule {}

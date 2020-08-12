@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlayerModalService } from '../player-modal.service';
+import { MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-player-new',
@@ -10,7 +11,10 @@ import { PlayerModalService } from '../player-modal.service';
 export class PlayerNewComponent implements OnInit {
   addPlayerForm: FormGroup;
 
-  constructor(public modalServ: PlayerModalService) {}
+  constructor(
+    public modalServ: PlayerModalService,
+    public dialogRef: MatDialogRef<PlayerNewComponent>
+  ) {}
 
   initForm() {
     this.addPlayerForm = new FormGroup({
@@ -22,6 +26,10 @@ export class PlayerNewComponent implements OnInit {
       endDate: new FormControl('', [Validators.required]),
       weeklySalary: new FormControl('', [Validators.required]),
     });
+  }
+
+  close() {
+    this.dialogRef.close();
   }
 
   ngOnInit(): void {

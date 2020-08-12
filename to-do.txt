@@ -5,4 +5,8 @@ New Sheet Design [Done]
 Delete Sheet Design [Done]
 Connect the ContractItem with a Player [Done]
 Replace inputs with datepickers [Done]
-Set up an http service
+Set up an http service [Done]
+Change modals to dialogs
+Fix the delete modal player name 
+Set update player route
+Make a contracts server

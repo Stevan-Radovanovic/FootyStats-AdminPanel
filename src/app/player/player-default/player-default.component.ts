@@ -3,6 +3,9 @@ import { Player } from 'src/app/shared/models/player.model';
 import { PlayerModalService } from '../player-modal.service';
 import { PlayerHttpService } from '../player-http.service';
 import { Subscription } from 'rxjs';
+import { ContractDefaultComponent } from '../contract/contract-default/contract-default.component';
+import { PlayerNewComponent } from '../player-new/player-new.component';
+import { MatDialog } from '@angular/material/dialog';
 
 @Component({
   selector: 'app-player-default',
@@ -15,13 +18,26 @@ export class PlayerDefaultComponent implements OnInit, OnDestroy {
 
   constructor(
     public modalServ: PlayerModalService,
-    public playerServ: PlayerHttpService
+    public playerServ: PlayerHttpService,
+    public dialog: MatDialog
   ) {}
 
   ngOnInit(): void {
     this.subs.push(
       this.playerServ.playerSubject.subscribe((players) => {
         this.players = players;
+      })
+    );
+  }
+
+  openDialog() {
+    const dialogRef = this.dialog.open(PlayerNewComponent, {
+      width: '500px',
+    });
+
+    this.subs.push(
+      dialogRef.afterClosed().subscribe((result) => {
+        console.log('TBD');
       })
     );
   }
