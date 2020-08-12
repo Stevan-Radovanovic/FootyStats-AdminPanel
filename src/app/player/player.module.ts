@@ -55,6 +55,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ContractEditComponent,
     ContractNewComponent,
     PlayerNewComponent,
+    PlayerEditComponent,
   ],
 })
 export class PlayerModule {}

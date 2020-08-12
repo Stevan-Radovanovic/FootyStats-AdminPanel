@@ -14,7 +14,7 @@
     <button mat-button color="primary">
       Games
     </button>
-    <button mat-button color="accent" (click)="modalServ.toggleEditModal()">
+    <button mat-button color="accent" (click)="openUpdateDialog()">
       <mat-icon>edit</mat-icon>
     </button>
     <button mat-button color="warn" (click)="modalServ.toggleDeleteModal()">
@@ -55,22 +55,6 @@
     class="modal-close is-large"
     aria-label="close"
     (click)="modalServ.toggleDeleteModal()"
-  ></button>
-</div>
-
-<div
-  class="modal"
-  id="editmodal"
-  [ngClass]="{ 'is-active': modalServ.editModalOpened }"
->
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <app-player-edit [player]="player"></app-player-edit>
-  </div>
-  <button
-    class="modal-close is-large"
-    aria-label="close"
-    (click)="modalServ.toggleEditModal()"
   ></button>
 </div>
 
