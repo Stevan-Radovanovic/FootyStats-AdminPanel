@@ -21,20 +21,4 @@ export class PlayerModalService {
   contractDialogRef: MatDialogRef<ContractDefaultComponent>;
 
   constructor() {}
-
-  toggleContractsModal() {
-    this.contractsModalOpened = !this.contractsModalOpened;
-  }
-
-  toggleNewModal() {
-    this.newModalOpened = !this.newModalOpened;
-  }
-
-  toggleDeleteModal() {
-    this.deleteModalOpened = !this.deleteModalOpened;
-  }
-
-  toggleEditModal() {
-    this.editModalOpened = !this.editModalOpened;
-  }
 }

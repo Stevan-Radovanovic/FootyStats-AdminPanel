@@ -1,5 +1,5 @@
 #addButton {
-  position: fixed;
-  top: 11px;
-  left: 11px;
+  position: absolute;
+  top: 5px;
+  right: 5px;
 }
