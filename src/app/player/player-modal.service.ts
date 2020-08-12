@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HeaderService } from '../header.service';
+import { MatDialogRef } from '@angular/material/dialog';
+import { PlayerNewComponent } from './player-new/player-new.component';
 
 @Injectable({
   providedIn: 'root',
@@ -9,6 +11,8 @@ export class PlayerModalService {
   editModalOpened = false;
   newModalOpened = false;
   contractsModalOpened = false;
+
+  newDialogRef: MatDialogRef<PlayerNewComponent>;
 
   constructor(private headerServ: HeaderService) {}
 
