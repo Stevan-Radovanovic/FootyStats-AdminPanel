@@ -59,6 +59,7 @@ import { PlayerDeleteComponent } from './player-delete/player-delete.component';
     PlayerNewComponent,
     PlayerEditComponent,
     PlayerDeleteComponent,
+    ContractDefaultComponent,
   ],
 })
 export class PlayerModule {}

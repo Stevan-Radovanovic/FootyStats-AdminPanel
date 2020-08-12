@@ -5,6 +5,7 @@ import { PlayerHttpService } from '../player-http.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PlayerEditComponent } from '../player-edit/player-edit.component';
 import { PlayerDeleteComponent } from '../player-delete/player-delete.component';
+import { ContractDefaultComponent } from '../contract/contract-default/contract-default.component';
 
 @Component({
   selector: 'app-player-item',
@@ -33,6 +34,17 @@ export class PlayerItemComponent implements OnInit {
 
   openUpdateDialog() {
     const dialogRef = this.dialog.open(PlayerEditComponent, {
+      width: '500px',
+      data: { player: this.player },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
+  }
+
+  openContractDialog() {
+    const dialogRef = this.dialog.open(ContractDefaultComponent, {
       width: '500px',
       data: { player: this.player },
     });

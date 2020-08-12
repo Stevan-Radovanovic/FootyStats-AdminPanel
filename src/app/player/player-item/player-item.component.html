@@ -4,11 +4,7 @@
     <mat-card-subtitle>{{ player.position }}</mat-card-subtitle>
   </mat-card-header>
   <mat-card-actions>
-    <button
-      mat-button
-      color="primary"
-      (click)="modalServ.toggleContractsModal()"
-    >
+    <button mat-button color="primary" (click)="openContractDialog()">
       Contracts
     </button>
     <button mat-button color="primary">
@@ -22,19 +18,3 @@
     </button>
   </mat-card-actions>
 </mat-card>
-
-<div
-  class="modal"
-  id="contractsmodal"
-  [ngClass]="{ 'is-active': modalServ.contractsModalOpened }"
->
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <app-contract-default [player]="player"></app-contract-default>
-  </div>
-  <button
-    class="modal-close is-large"
-    aria-label="close"
-    (click)="modalServ.toggleContractsModal()"
-  ></button>
-</div>

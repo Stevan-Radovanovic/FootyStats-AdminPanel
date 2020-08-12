@@ -20,7 +20,7 @@ export class PlayerHttpService {
 
   getPlayers() {
     return this.http
-      .get<{ players: Player[] }>('http://localhost:3000/players/detail')
+      .get<{ players: Player[] }>('http://localhost:3000/players')
       .subscribe((response) => {
         console.log(response);
         this.players = response.players;
