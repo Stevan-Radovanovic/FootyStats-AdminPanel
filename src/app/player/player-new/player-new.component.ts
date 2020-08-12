@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { PlayerModalService } from '../player-modal.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Player } from 'src/app/shared/models/player.model';
+import { PlayerHttpService } from '../player-http.service';
 
 @Component({
   selector: 'app-player-new',
@@ -13,7 +13,7 @@ export class PlayerNewComponent implements OnInit {
   addPlayerForm: FormGroup;
 
   constructor(
-    public modalServ: PlayerModalService,
+    public playerServ: PlayerHttpService,
     public dialogRef: MatDialogRef<PlayerNewComponent>
   ) {}
 
@@ -47,7 +47,15 @@ export class PlayerNewComponent implements OnInit {
         },
       ],
     };
-    this.dialogRef.close();
+
+    this.playerServ
+      .addNewPlayer(player)
+      .subscribe((response: { message: string; player: Player }) => {
+        player.id = response.player.id;
+        this.playerServ.players.push(player);
+        this.playerServ.playerSubject.next(this.playerServ.players);
+        this.dialogRef.close();
+      });
   }
 
   ngOnInit(): void {

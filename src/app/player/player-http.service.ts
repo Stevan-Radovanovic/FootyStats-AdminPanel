@@ -41,16 +41,11 @@ export class PlayerHttpService {
   }
 
   addNewPlayer(player: Player) {
-    this.http
-      .post('http://localhost:3000/players', {
-        fullName: player.fullName,
-        number: player.number,
-        position: player.position,
-        dateOfBirth: player.dateOfBirth,
-      })
-      .subscribe((response) => {
-        this.players.push(player);
-        this.playerSubject.next(this.players);
-      });
+    return this.http.post('http://localhost:3000/players', {
+      fullName: player.fullName,
+      number: player.number,
+      position: player.position,
+      dateOfBirth: player.dateOfBirth,
+    });
   }
 }
