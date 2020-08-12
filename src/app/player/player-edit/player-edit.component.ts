@@ -3,6 +3,7 @@ import { Player } from 'src/app/shared/models/player.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlayerModalService } from '../player-modal.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { PlayerHttpService } from '../player-http.service';
 
 @Component({
   selector: 'app-player-edit',
@@ -10,11 +11,11 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./player-edit.component.css'],
 })
 export class PlayerEditComponent implements OnInit {
-  @Input() player: Player;
   editPlayerForm: FormGroup;
 
   constructor(
     public modalServ: PlayerModalService,
+    public playerServ: PlayerHttpService,
     public dialogRef: MatDialogRef<PlayerEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
@@ -37,6 +38,17 @@ export class PlayerEditComponent implements OnInit {
         Validators.required,
       ]),
     });
+  }
+
+  updatePlayer() {
+    const player: Player = {
+      id: this.data.player.id,
+      fullName: this.editPlayerForm.controls.fullName.value,
+      number: this.editPlayerForm.controls.shirtNumber.value,
+      dateOfBirth: this.editPlayerForm.controls.dateOfBirth.value,
+      position: this.editPlayerForm.controls.position.value,
+    };
+    this.playerServ.updatePlayer(player);
   }
 
   close() {

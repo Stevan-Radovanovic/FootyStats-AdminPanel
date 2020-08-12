@@ -56,4 +56,20 @@ export class PlayerHttpService {
         this.contractServ.addNewContract(player.contracts[0], player.id);
       });
   }
+
+  updatePlayer(player: Player) {
+    this.http
+      .put('http://localhost:3000/players/' + player.id, {
+        fullName: player.fullName,
+        number: player.number,
+        position: player.position,
+        dateOfBirth: player.dateOfBirth,
+      })
+      .subscribe((result) => {
+        const index = this.players.findIndex((pl) => pl.id === player.id);
+        this.players[index] = player;
+        this.playerSubject.next(this.players);
+        this.modalServ.editDialogRef.close();
+      });
+  }
 }
