@@ -15,12 +15,13 @@ export class ContractHttpService {
   addNewContract(contract: Contract, id: number) {
     this.http
       .post('http://localhost:3000/contracts', {
-        startDate: contract.startDate,
-        endDate: contract.endDate,
+        startingDate: contract.startDate,
+        endingDate: contract.endDate,
         weeklySalary: contract.weeklySalary,
         playerId: id,
       })
       .subscribe((result) => {
+        console.log(result);
         this.modalServ.newDialogRef.close();
       });
   }
