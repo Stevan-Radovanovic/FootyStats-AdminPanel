@@ -21,6 +21,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { ContractDeleteComponent } from './contract/contract-delete/contract-delete.component';
 import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
 import { ContractNewComponent } from './contract/contract-new/contract-new.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { ContractNewComponent } from './contract/contract-new/contract-new.compo
     MatBottomSheetModule,
     MatDatepickerModule,
     MatNativeDateModule,
+    MatDialogModule,
   ],
   entryComponents: [
     ContractDeleteComponent,

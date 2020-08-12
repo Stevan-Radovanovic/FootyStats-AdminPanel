@@ -37,7 +37,7 @@ export class PlayerDefaultComponent implements OnInit, OnDestroy {
 
     this.subs.push(
       dialogRef.afterClosed().subscribe((result) => {
-        console.log('TBD');
+        console.log(result);
       })
     );
   }

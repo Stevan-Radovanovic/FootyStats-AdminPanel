@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { PlayerModalService } from '../player-modal.service';
 import { MatDialogRef } from '@angular/material/dialog';
+import { Player } from 'src/app/shared/models/player.model';
 
 @Component({
   selector: 'app-player-new',
@@ -29,6 +30,23 @@ export class PlayerNewComponent implements OnInit {
   }
 
   close() {
+    this.dialogRef.close();
+  }
+
+  savePlayer() {
+    const player: Player = {
+      fullName: this.addPlayerForm.controls.fullName.value,
+      number: this.addPlayerForm.controls.shirtNumber.value,
+      dateOfBirth: this.addPlayerForm.controls.dateOfBirth.value,
+      position: this.addPlayerForm.controls.position.value,
+      contracts: [
+        {
+          startDate: this.addPlayerForm.controls.startDate.value,
+          endDate: this.addPlayerForm.controls.endDate.value,
+          weeklySalary: this.addPlayerForm.controls.weeklySalary.value,
+        },
+      ],
+    };
     this.dialogRef.close();
   }
 
