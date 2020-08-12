@@ -22,6 +22,7 @@ import { ContractDeleteComponent } from './contract/contract-delete/contract-del
 import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
 import { ContractNewComponent } from './contract/contract-new/contract-new.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { PlayerDeleteComponent } from './player-delete/player-delete.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ContractDeleteComponent,
     ContractEditComponent,
     ContractNewComponent,
+    PlayerDeleteComponent,
   ],
   imports: [
     CommonModule,
@@ -56,6 +58,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ContractNewComponent,
     PlayerNewComponent,
     PlayerEditComponent,
+    PlayerDeleteComponent,
   ],
 })
 export class PlayerModule {}

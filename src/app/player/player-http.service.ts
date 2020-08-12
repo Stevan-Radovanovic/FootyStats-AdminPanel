@@ -37,7 +37,7 @@ export class PlayerHttpService {
         });
         console.log(result);
         this.playerSubject.next(this.players);
-        this.modalServ.toggleDeleteModal();
+        this.modalServ.deleteDialogRef.close();
       });
   }
 

@@ -4,6 +4,7 @@ import { PlayerModalService } from '../player-modal.service';
 import { PlayerHttpService } from '../player-http.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PlayerEditComponent } from '../player-edit/player-edit.component';
+import { PlayerDeleteComponent } from '../player-delete/player-delete.component';
 
 @Component({
   selector: 'app-player-item',
@@ -19,8 +20,15 @@ export class PlayerItemComponent implements OnInit {
     public dialog: MatDialog
   ) {}
 
-  deletePlayer() {
-    this.playerServ.deletePlayer(this.player);
+  openDeleteDialog() {
+    const dialogRef = this.dialog.open(PlayerDeleteComponent, {
+      width: '500px',
+      data: { player: this.player },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
   }
 
   openUpdateDialog() {

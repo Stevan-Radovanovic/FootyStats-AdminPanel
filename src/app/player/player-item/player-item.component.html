@@ -17,46 +17,11 @@
     <button mat-button color="accent" (click)="openUpdateDialog()">
       <mat-icon>edit</mat-icon>
     </button>
-    <button mat-button color="warn" (click)="modalServ.toggleDeleteModal()">
+    <button mat-button color="warn" (click)="openDeleteDialog()">
       <mat-icon>delete</mat-icon>
     </button>
   </mat-card-actions>
 </mat-card>
-
-<div
-  class="modal"
-  id="deletemodal"
-  [ngClass]="{ 'is-active': modalServ.deleteModalOpened }"
->
-  <div class="modal-background"></div>
-  <div class="modal-content">
-    <mat-card>
-      <mat-card-header>
-        <mat-card-title>Deleting {{ player.fullName }}!</mat-card-title>
-        <mat-card-subtitle>Are you sure?</mat-card-subtitle>
-      </mat-card-header>
-      <mat-card-actions>
-        <button mat-button color="warn" (click)="deletePlayer()">
-          <mat-icon>check</mat-icon>
-          Yes
-        </button>
-        <button
-          mat-button
-          color="primary"
-          (click)="modalServ.toggleDeleteModal()"
-        >
-          <mat-icon>not_interested</mat-icon>
-          No
-        </button>
-      </mat-card-actions>
-    </mat-card>
-  </div>
-  <button
-    class="modal-close is-large"
-    aria-label="close"
-    (click)="modalServ.toggleDeleteModal()"
-  ></button>
-</div>
 
 <div
   class="modal"
