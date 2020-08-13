@@ -37,6 +37,18 @@ export class ContractHttpService {
       });
   }
 
+  deleteContract(contract: Contract) {
+    this.http
+      .delete('http://localhost:3000/contracts/' + contract.id)
+      .subscribe((result) => {
+        this.contracts = this.contracts.filter((cont) => {
+          return cont !== contract;
+        });
+        this.contractSubject.next(this.contracts);
+        this.modalServ.deleteBottomSheetRef.dismiss();
+      });
+  }
+
   getContractsByPlayerId(id: number) {
     return this.http
       .get<{ contract: Contract[] }>(
