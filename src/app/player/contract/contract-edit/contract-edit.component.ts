@@ -4,6 +4,9 @@ import {
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Contract } from 'src/app/shared/models/contract.model';
+import { ContractHttpService } from '../../contract-http.service';
+import { PlayerModalService } from '../../player-modal.service';
 
 @Component({
   selector: 'app-contract-edit',
@@ -15,8 +18,12 @@ export class ContractEditComponent implements OnInit {
 
   constructor(
     public bottomSheetRef: MatBottomSheetRef<ContractEditComponent>,
+    public contractServ: ContractHttpService,
+    private modalServ: PlayerModalService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
-  ) {}
+  ) {
+    this.modalServ.editBottomSheetRef = this.bottomSheetRef;
+  }
 
   initForm() {
     this.editContractForm = new FormGroup({
@@ -34,6 +41,15 @@ export class ContractEditComponent implements OnInit {
 
   ngOnInit(): void {
     this.initForm();
+  }
+
+  editContract() {
+    const contract: Contract = {
+      endingDate: this.editContractForm.controls.endDate.value,
+      startingDate: this.editContractForm.controls.startDate.value,
+      weeklySalary: this.editContractForm.controls.weeklySalary.value,
+    };
+    this.contractServ.updateContract(contract);
   }
 
   close() {

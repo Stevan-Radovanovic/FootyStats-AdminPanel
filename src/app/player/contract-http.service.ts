@@ -49,6 +49,21 @@ export class ContractHttpService {
       });
   }
 
+  updateContract(contract: Contract) {
+    this.http
+      .put('http://localhost:3000/contracts/' + contract.id, {
+        startingDate: contract.startingDate,
+        endingDate: contract.endingDate,
+        weeklySalary: contract.weeklySalary,
+      })
+      .subscribe((result) => {
+        const index = this.contracts.findIndex((co) => co.id === contract.id);
+        this.contracts[index] = contract;
+        this.contractSubject.next(this.contracts);
+        this.modalServ.editBottomSheetRef.dismiss();
+      });
+  }
+
   getContractsByPlayerId(id: number) {
     return this.http
       .get<{ contract: Contract[] }>(

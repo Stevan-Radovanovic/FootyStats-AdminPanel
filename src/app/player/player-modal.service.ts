@@ -8,6 +8,7 @@ import { ContractDefaultComponent } from './contract/contract-default/contract-d
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { ContractNewComponent } from './contract/contract-new/contract-new.component';
 import { ContractDeleteComponent } from './contract/contract-delete/contract-delete.component';
+import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,7 @@ export class PlayerModalService {
   contractDialogRef: MatDialogRef<ContractDefaultComponent>;
   newBottomSheetRef: MatBottomSheetRef<ContractNewComponent>;
   deleteBottomSheetRef: MatBottomSheetRef<ContractDeleteComponent>;
+  editBottomSheetRef: MatBottomSheetRef<ContractEditComponent>;
 
   constructor() {}
 }
