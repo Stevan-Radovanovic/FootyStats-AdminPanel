@@ -45,6 +45,7 @@ export class ContractEditComponent implements OnInit {
 
   editContract() {
     const contract: Contract = {
+      id: this.data.contract.id,
       endingDate: this.editContractForm.controls.endDate.value,
       startingDate: this.editContractForm.controls.startDate.value,
       weeklySalary: this.editContractForm.controls.weeklySalary.value,
