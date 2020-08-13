@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Contract } from '../shared/models/contract.model';
 import { PlayerModalService } from './player-modal.service';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,9 @@ export class ContractHttpService {
     private http: HttpClient,
     private modalServ: PlayerModalService
   ) {}
+
+  contractSubject = new BehaviorSubject<Contract[]>([]);
+  contracts: Contract[] = [];
 
   addNewContract(contract: Contract, id: number) {
     this.http
@@ -23,6 +27,18 @@ export class ContractHttpService {
       .subscribe((result) => {
         console.log(result);
         this.modalServ.newDialogRef.close();
+      });
+  }
+
+  getContractsByPlayerId(id: number) {
+    return this.http
+      .get<{ contract: Contract[] }>(
+        'http://localhost:3000/contracts/player-all/' + id
+      )
+      .subscribe((response) => {
+        console.log(response);
+        this.contracts = response.contract;
+        this.contractSubject.next(this.contracts);
       });
   }
 }
