@@ -23,10 +23,10 @@ export class ContractEditComponent implements OnInit {
       weeklySalary: new FormControl(this.data.contract.weeklySalary, [
         Validators.required,
       ]),
-      startDate: new FormControl(this.data.contract.startDate, [
+      startDate: new FormControl(this.data.contract.startingDate, [
         Validators.required,
       ]),
-      endDate: new FormControl(this.data.contract.endDate, [
+      endDate: new FormControl(this.data.contract.endingDate, [
         Validators.required,
       ]),
     });

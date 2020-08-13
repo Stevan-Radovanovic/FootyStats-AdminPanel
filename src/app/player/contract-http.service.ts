@@ -19,8 +19,8 @@ export class ContractHttpService {
   addNewContract(contract: Contract, id: number) {
     this.http
       .post('http://localhost:3000/contracts', {
-        startingDate: contract.startDate,
-        endingDate: contract.endDate,
+        startingDate: contract.startingDate,
+        endingDate: contract.endingDate,
         weeklySalary: contract.weeklySalary,
         playerId: id,
       })
