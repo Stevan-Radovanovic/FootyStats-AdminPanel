@@ -57,6 +57,7 @@ export class ContractHttpService {
         weeklySalary: contract.weeklySalary,
       })
       .subscribe((result) => {
+        console.log(result);
         const index = this.contracts.findIndex((co) => co.id === contract.id);
         this.contracts[index] = contract;
         this.contractSubject.next(this.contracts);

@@ -9,4 +9,6 @@ Set up an http service [Done]
 Change modals to dialogs [Done]
 Fix the delete modal player name  [Done]
 Set update player route [Done]
-Make a contracts server
+Make a contracts server [Done]
+Fix the Update Contract Error
+Make Games Service

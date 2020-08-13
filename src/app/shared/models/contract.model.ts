@@ -5,6 +5,6 @@ export interface Contract {
   startingDate: Date;
   endingDate: Date;
   weeklySalary: number;
-  player?: Player;
+  playerId?: number;
   bonuses?: Bonus[];
 }
