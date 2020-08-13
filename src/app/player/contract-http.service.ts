@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Contract } from '../shared/models/contract.model';
 import { PlayerModalService } from './player-modal.service';
 import { BehaviorSubject } from 'rxjs';
+import { MatDialogState } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root',
@@ -24,9 +25,15 @@ export class ContractHttpService {
         weeklySalary: contract.weeklySalary,
         playerId: id,
       })
-      .subscribe((result) => {
-        console.log(result);
-        this.modalServ.newDialogRef.close();
+      .subscribe((result: { contract: Contract; message: string }) => {
+        if (this.modalServ.newDialogRef) {
+          this.modalServ.newDialogRef.close();
+        }
+        if (this.modalServ.newBottomSheetRef) {
+          this.modalServ.newBottomSheetRef.dismiss();
+        }
+        this.contracts.push(result.contract);
+        this.contractSubject.next(this.contracts);
       });
   }
 

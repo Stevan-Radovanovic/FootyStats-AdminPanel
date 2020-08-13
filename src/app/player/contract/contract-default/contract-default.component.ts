@@ -27,7 +27,9 @@ export class ContractDefaultComponent implements OnInit, OnDestroy {
   }
 
   openNewBottomSheet(): void {
-    this.bottomSheet.open(ContractNewComponent);
+    this.bottomSheet.open(ContractNewComponent, {
+      data: { player: this.data.player },
+    });
   }
 
   close() {

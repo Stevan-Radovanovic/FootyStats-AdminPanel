@@ -49,8 +49,8 @@ export class PlayerNewComponent implements OnInit {
       position: this.addPlayerForm.controls.position.value,
       contracts: [
         {
-          startDate: this.addPlayerForm.controls.startDate.value,
-          endDate: this.addPlayerForm.controls.endDate.value,
+          startingDate: this.addPlayerForm.controls.startDate.value,
+          endingDate: this.addPlayerForm.controls.endDate.value,
           weeklySalary: this.addPlayerForm.controls.weeklySalary.value,
         },
       ],
