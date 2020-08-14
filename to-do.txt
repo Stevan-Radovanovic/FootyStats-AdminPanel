@@ -10,5 +10,5 @@ Change modals to dialogs [Done]
 Fix the delete modal player name  [Done]
 Set update player route [Done]
 Make a contracts server [Done]
-Fix the Update Contract Error
+Fix the Update Contract Error [Done]
 Make Games Service

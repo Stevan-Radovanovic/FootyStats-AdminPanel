@@ -1,7 +1,10 @@
 <mat-card>
   <mat-card-content>
-    <p>Amount: {{ contract.weeklySalary }}</p>
-    <p>Duration: {{ contract.startingDate | date }} - {{ contract.endingDate | date }}</p>
+    <p>Amount: {{ contract.weeklySalary | salary }}</p>
+    <p>
+      Duration: {{ contract.startingDate | date }} -
+      {{ contract.endingDate | date }}
+    </p>
   </mat-card-content>
 
   <button
