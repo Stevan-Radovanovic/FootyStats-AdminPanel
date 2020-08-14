@@ -6,8 +6,15 @@ import { GameItemComponent } from './game-item/game-item.component';
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatCardModule } from '@angular/material/card';
+import { MatIconModule } from '@angular/material/icon';
 @NgModule({
   declarations: [GameDefaultComponent, GameItemComponent],
-  imports: [CommonModule, GameRoutingModule, MatButtonModule, MatCardModule],
+  imports: [
+    CommonModule,
+    GameRoutingModule,
+    MatButtonModule,
+    MatCardModule,
+    MatIconModule,
+  ],
 })
 export class GameModule {}
