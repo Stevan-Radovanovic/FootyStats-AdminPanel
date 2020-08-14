@@ -3,6 +3,7 @@ import { GameHttpService } from 'src/app/shared/services/game-http.service';
 import { SessionService } from 'src/app/shared/services/session.service';
 import { MatDialogRef } from '@angular/material/dialog';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Game } from 'src/app/shared/models/game.model';
 
 @Component({
   selector: 'app-game-new',
@@ -30,6 +31,16 @@ export class GameNewComponent implements OnInit {
 
   close() {
     this.modalServ.gameNewDialogRef.close();
+  }
+
+  saveGame() {
+    const game: Game = {
+      opponentName: this.addGameForm.controls.opponent.value,
+      result: this.addGameForm.controls.result.value,
+      dateOfPlaying: this.addGameForm.controls.date.value,
+    };
+
+    this.gameServ.addNewGame(game);
   }
 
   ngOnInit(): void {

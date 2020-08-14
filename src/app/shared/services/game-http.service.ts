@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Game } from '../models/game.model';
 import { BehaviorSubject } from 'rxjs';
+import { SessionService } from './session.service';
 
 @Injectable({
   providedIn: 'root',
@@ -10,7 +11,7 @@ export class GameHttpService {
   gameSubject = new BehaviorSubject<Game[]>([]);
   games: Game[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private modalServ: SessionService) {}
 
   getGames() {
     return this.http
@@ -38,13 +39,15 @@ export class GameHttpService {
     this.http
       .post('http://localhost:3000/games', {
         result: game.result,
-        opponent: game.opponent,
+        opponentName: game.opponentName,
         dateOfPlaying: game.dateOfPlaying,
       })
       .subscribe((response: { message: string; game: Game }) => {
+        console.log(response);
         game.id = response.game.id;
         this.games.push(game);
         this.gameSubject.next(this.games);
+        this.modalServ.gameNewDialogRef.close();
       });
   }
 
@@ -52,7 +55,7 @@ export class GameHttpService {
     this.http
       .put('http://localhost:3000/games/' + game.id, {
         result: game.result,
-        opponent: game.opponent,
+        opponentName: game.opponentName,
         dateOfPlaying: game.dateOfPlaying,
       })
       .subscribe((result) => {
