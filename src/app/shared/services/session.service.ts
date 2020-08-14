@@ -8,6 +8,7 @@ import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { ContractNewComponent } from '../../player/contract/contract-new/contract-new.component';
 import { ContractDeleteComponent } from '../../player/contract/contract-delete/contract-delete.component';
 import { ContractEditComponent } from '../../player/contract/contract-edit/contract-edit.component';
+import { GameNewComponent } from 'src/app/game/game-new/game-new.component';
 
 @Injectable({
   providedIn: 'root',
@@ -25,6 +26,8 @@ export class SessionService {
   newBottomSheetRef: MatBottomSheetRef<ContractNewComponent>;
   deleteBottomSheetRef: MatBottomSheetRef<ContractDeleteComponent>;
   editBottomSheetRef: MatBottomSheetRef<ContractEditComponent>;
+
+  gameNewDialogRef: MatDialogRef<GameNewComponent>;
 
   constructor() {}
 }
