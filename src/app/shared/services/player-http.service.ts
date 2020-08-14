@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { BehaviorSubject } from 'rxjs';
-import { Player } from '../shared/models/player.model';
-import { PlayerModalService } from './player-modal.service';
+import { Player } from '../models/player.model';
+import { SessionService } from './session.service';
 import { ContractHttpService } from './contract-http.service';
 
 @Injectable({
@@ -14,7 +14,7 @@ export class PlayerHttpService {
 
   constructor(
     private http: HttpClient,
-    private modalServ: PlayerModalService,
+    private modalServ: SessionService,
     private contractServ: ContractHttpService
   ) {}
 

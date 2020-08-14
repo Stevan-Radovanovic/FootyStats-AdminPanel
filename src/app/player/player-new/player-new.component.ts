@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { MatDialogRef } from '@angular/material/dialog';
 import { Player } from 'src/app/shared/models/player.model';
-import { PlayerHttpService } from '../player-http.service';
-import { PlayerModalService } from '../player-modal.service';
+import { PlayerHttpService } from '../../shared/services/player-http.service';
+import { SessionService } from '../../shared/services/session.service';
 
 @Component({
   selector: 'app-player-new',
@@ -15,7 +15,7 @@ export class PlayerNewComponent implements OnInit {
 
   constructor(
     public playerServ: PlayerHttpService,
-    public modalServ: PlayerModalService,
+    public modalServ: SessionService,
     public dialogRef: MatDialogRef<PlayerNewComponent>
   ) {
     this.modalServ.newDialogRef = dialogRef;

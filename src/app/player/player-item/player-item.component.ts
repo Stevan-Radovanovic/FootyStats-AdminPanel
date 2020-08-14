@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
-import { PlayerModalService } from '../player-modal.service';
-import { PlayerHttpService } from '../player-http.service';
+import { SessionService } from '../../shared/services/session.service';
+import { PlayerHttpService } from '../../shared/services/player-http.service';
 import { MatDialog } from '@angular/material/dialog';
 import { PlayerEditComponent } from '../player-edit/player-edit.component';
 import { PlayerDeleteComponent } from '../player-delete/player-delete.component';
@@ -16,7 +16,7 @@ export class PlayerItemComponent implements OnInit {
   @Input() player: Player;
 
   constructor(
-    public modalServ: PlayerModalService,
+    public modalServ: SessionService,
     public playerServ: PlayerHttpService,
     public dialog: MatDialog
   ) {}

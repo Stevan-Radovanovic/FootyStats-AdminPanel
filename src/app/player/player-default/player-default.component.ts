@@ -1,7 +1,7 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
-import { PlayerModalService } from '../player-modal.service';
-import { PlayerHttpService } from '../player-http.service';
+import { SessionService } from '../../shared/services/session.service';
+import { PlayerHttpService } from '../../shared/services/player-http.service';
 import { Subscription } from 'rxjs';
 import { ContractDefaultComponent } from '../contract/contract-default/contract-default.component';
 import { PlayerNewComponent } from '../player-new/player-new.component';
@@ -17,7 +17,7 @@ export class PlayerDefaultComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
 
   constructor(
-    public modalServ: PlayerModalService,
+    public modalServ: SessionService,
     public playerServ: PlayerHttpService,
     public dialog: MatDialog
   ) {}

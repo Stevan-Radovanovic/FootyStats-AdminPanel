@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { PlayerHttpService } from './player/player-http.service';
+import { PlayerHttpService } from './shared/services/player-http.service';
 
 @Component({
   selector: 'app-root',

@@ -3,8 +3,8 @@ import {
   MatBottomSheetRef,
   MAT_BOTTOM_SHEET_DATA,
 } from '@angular/material/bottom-sheet';
-import { ContractHttpService } from '../../contract-http.service';
-import { PlayerModalService } from '../../player-modal.service';
+import { ContractHttpService } from '../../../shared/services/contract-http.service';
+import { SessionService } from '../../../shared/services/session.service';
 
 @Component({
   selector: 'app-contract-delete',
@@ -15,7 +15,7 @@ export class ContractDeleteComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<ContractDeleteComponent>,
     private contractServ: ContractHttpService,
-    private modalServ: PlayerModalService,
+    private modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.deleteBottomSheetRef = this.bottomSheetRef;

@@ -1,18 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Contract } from '../shared/models/contract.model';
-import { PlayerModalService } from './player-modal.service';
+import { Contract } from '../models/contract.model';
+import { SessionService } from './session.service';
 import { BehaviorSubject } from 'rxjs';
-import { MatDialogState } from '@angular/material/dialog';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContractHttpService {
-  constructor(
-    private http: HttpClient,
-    private modalServ: PlayerModalService
-  ) {}
+  constructor(private http: HttpClient, private modalServ: SessionService) {}
 
   contractSubject = new BehaviorSubject<Contract[]>([]);
   contracts: Contract[] = [];

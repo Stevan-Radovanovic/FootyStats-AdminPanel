@@ -3,9 +3,9 @@ import { Contract } from 'src/app/shared/models/contract.model';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ContractNewComponent } from '../contract-new/contract-new.component';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
-import { PlayerModalService } from '../../player-modal.service';
+import { SessionService } from '../../../shared/services/session.service';
 import { Subscription } from 'rxjs';
-import { ContractHttpService } from '../../contract-http.service';
+import { ContractHttpService } from '../../../shared/services/contract-http.service';
 
 @Component({
   selector: 'app-contract-default',
@@ -18,7 +18,7 @@ export class ContractDefaultComponent implements OnInit, OnDestroy {
 
   constructor(
     private bottomSheet: MatBottomSheet,
-    private modalServ: PlayerModalService,
+    private modalServ: SessionService,
     private contractServ: ContractHttpService,
     public dialogRef: MatDialogRef<ContractDefaultComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any

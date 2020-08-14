@@ -5,8 +5,8 @@ import {
 } from '@angular/material/bottom-sheet';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Contract } from 'src/app/shared/models/contract.model';
-import { ContractHttpService } from '../../contract-http.service';
-import { PlayerModalService } from '../../player-modal.service';
+import { ContractHttpService } from '../../../shared/services/contract-http.service';
+import { SessionService } from '../../../shared/services/session.service';
 
 @Component({
   selector: 'app-contract-new',
@@ -19,7 +19,7 @@ export class ContractNewComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<ContractNewComponent>,
     private contractServ: ContractHttpService,
-    private modalServ: PlayerModalService,
+    private modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.newBottomSheetRef = this.bottomSheetRef;

@@ -1,9 +1,9 @@
 import { Component, OnInit, Input, Inject } from '@angular/core';
 import { Player } from 'src/app/shared/models/player.model';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { PlayerModalService } from '../player-modal.service';
+import { SessionService } from '../../shared/services/session.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { PlayerHttpService } from '../player-http.service';
+import { PlayerHttpService } from '../../shared/services/player-http.service';
 
 @Component({
   selector: 'app-player-edit',
@@ -14,7 +14,7 @@ export class PlayerEditComponent implements OnInit {
   editPlayerForm: FormGroup;
 
   constructor(
-    public modalServ: PlayerModalService,
+    public modalServ: SessionService,
     public playerServ: PlayerHttpService,
     public dialogRef: MatDialogRef<PlayerEditComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any

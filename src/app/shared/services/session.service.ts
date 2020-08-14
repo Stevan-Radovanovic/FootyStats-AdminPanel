@@ -1,19 +1,18 @@
 import { Injectable } from '@angular/core';
 import { MatDialogRef, MatDialog } from '@angular/material/dialog';
-import { PlayerNewComponent } from './player-new/player-new.component';
-import { PlayerEditComponent } from './player-edit/player-edit.component';
-import { PlayerDefaultComponent } from './player-default/player-default.component';
-import { PlayerDeleteComponent } from './player-delete/player-delete.component';
-import { ContractDefaultComponent } from './contract/contract-default/contract-default.component';
+import { PlayerNewComponent } from '../../player/player-new/player-new.component';
+import { PlayerEditComponent } from '../../player/player-edit/player-edit.component';
+import { PlayerDeleteComponent } from '../../player/player-delete/player-delete.component';
+import { ContractDefaultComponent } from '../../player/contract/contract-default/contract-default.component';
 import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
-import { ContractNewComponent } from './contract/contract-new/contract-new.component';
-import { ContractDeleteComponent } from './contract/contract-delete/contract-delete.component';
-import { ContractEditComponent } from './contract/contract-edit/contract-edit.component';
+import { ContractNewComponent } from '../../player/contract/contract-new/contract-new.component';
+import { ContractDeleteComponent } from '../../player/contract/contract-delete/contract-delete.component';
+import { ContractEditComponent } from '../../player/contract/contract-edit/contract-edit.component';
 
 @Injectable({
   providedIn: 'root',
 })
-export class PlayerModalService {
+export class SessionService {
   deleteModalOpened = false;
   editModalOpened = false;
   newModalOpened = false;
