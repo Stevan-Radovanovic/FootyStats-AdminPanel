@@ -24,7 +24,10 @@ export class GameNewComponent implements OnInit {
   initForm() {
     this.addGameForm = new FormGroup({
       opponent: new FormControl('', [Validators.required]),
-      result: new FormControl('', [Validators.required]),
+      result: new FormControl('', [
+        Validators.required,
+        Validators.pattern('[0-9]+-[0-9]+'),
+      ]),
       date: new FormControl('', [Validators.required]),
     });
   }

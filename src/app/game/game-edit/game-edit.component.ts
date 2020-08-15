@@ -27,7 +27,10 @@ export class GameEditComponent implements OnInit {
       opponent: new FormControl(this.data.game.opponentName, [
         Validators.required,
       ]),
-      result: new FormControl(this.data.game.result, [Validators.required]),
+      result: new FormControl(this.data.game.result, [
+        Validators.required,
+        Validators.pattern('[0-9]+-[0-9]+'),
+      ]),
       date: new FormControl(this.data.game.dateOfPlaying, [
         Validators.required,
       ]),
