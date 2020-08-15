@@ -59,9 +59,11 @@ export class GameHttpService {
         dateOfPlaying: game.dateOfPlaying,
       })
       .subscribe((result) => {
+        console.log(result);
         const index = this.games.findIndex((pl) => pl.id === game.id);
         this.games[index] = game;
         this.gameSubject.next(this.games);
+        this.modalServ.gameEditDialogRef.close();
       });
   }
 }

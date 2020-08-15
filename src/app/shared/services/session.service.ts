@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { MatDialogRef, MatDialog } from '@angular/material/dialog';
+import { MatDialogRef } from '@angular/material/dialog';
 import { PlayerNewComponent } from '../../player/player-new/player-new.component';
 import { PlayerEditComponent } from '../../player/player-edit/player-edit.component';
 import { PlayerDeleteComponent } from '../../player/player-delete/player-delete.component';
@@ -9,6 +9,7 @@ import { ContractNewComponent } from '../../player/contract/contract-new/contrac
 import { ContractDeleteComponent } from '../../player/contract/contract-delete/contract-delete.component';
 import { ContractEditComponent } from '../../player/contract/contract-edit/contract-edit.component';
 import { GameNewComponent } from 'src/app/game/game-new/game-new.component';
+import { GameEditComponent } from 'src/app/game/game-edit/game-edit.component';
 
 @Injectable({
   providedIn: 'root',
@@ -28,6 +29,7 @@ export class SessionService {
   editBottomSheetRef: MatBottomSheetRef<ContractEditComponent>;
 
   gameNewDialogRef: MatDialogRef<GameNewComponent>;
+  gameEditDialogRef: MatDialogRef<GameEditComponent>;
 
   constructor() {}
 }
