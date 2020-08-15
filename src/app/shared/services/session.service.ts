@@ -10,6 +10,7 @@ import { ContractDeleteComponent } from '../../player/contract/contract-delete/c
 import { ContractEditComponent } from '../../player/contract/contract-edit/contract-edit.component';
 import { GameNewComponent } from 'src/app/game/game-new/game-new.component';
 import { GameEditComponent } from 'src/app/game/game-edit/game-edit.component';
+import { GameDeleteComponent } from 'src/app/game/game-delete/game-delete.component';
 
 @Injectable({
   providedIn: 'root',
@@ -30,6 +31,7 @@ export class SessionService {
 
   gameNewDialogRef: MatDialogRef<GameNewComponent>;
   gameEditDialogRef: MatDialogRef<GameEditComponent>;
+  gameDeleteDialogRef: MatDialogRef<GameDeleteComponent>;
 
   constructor() {}
 }

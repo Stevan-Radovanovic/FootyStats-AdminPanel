@@ -25,13 +25,14 @@ export class GameHttpService {
 
   deleteGame(game: Game) {
     this.http
-      .delete('http://localhost:3000/game/' + game.id)
+      .delete('http://localhost:3000/games/' + game.id)
       .subscribe((result) => {
         this.games = this.games.filter((ga) => {
           return ga !== game;
         });
         console.log(result);
         this.gameSubject.next(this.games);
+        this.modalServ.gameDeleteDialogRef.close();
       });
   }
 

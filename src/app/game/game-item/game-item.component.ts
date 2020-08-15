@@ -2,6 +2,7 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Game } from 'src/app/shared/models/game.model';
 import { MatDialog } from '@angular/material/dialog';
 import { GameEditComponent } from '../game-edit/game-edit.component';
+import { GameDeleteComponent } from '../game-delete/game-delete.component';
 
 @Component({
   selector: 'app-game-item',
@@ -15,6 +16,17 @@ export class GameItemComponent implements OnInit {
 
   openUpdateDialog() {
     const dialogRef = this.dialog.open(GameEditComponent, {
+      width: '500px',
+      data: { game: this.game },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
+  }
+
+  openDeleteDialog() {
+    const dialogRef = this.dialog.open(GameDeleteComponent, {
       width: '500px',
       data: { game: this.game },
     });
