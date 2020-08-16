@@ -13,9 +13,7 @@ export class StatItemComponent implements OnInit {
   @Input() game: Game;
   @Input() player: Player;
 
-  constructor() {
-    console.log(this.stat);
-  }
+  constructor() {}
 
   ngOnInit(): void {}
 }
