@@ -1,1 +1,5 @@
-<p>{{ stat.goals }} | {{ stat.assists }}</p>
+<p>
+  {{ stat.goals }} | {{ stat.assists }} |
+  {{ game ? game.opponentName : stat.opponentName }} |
+  {{ player ? player.fullName : stat.playerName }} |
+</p>

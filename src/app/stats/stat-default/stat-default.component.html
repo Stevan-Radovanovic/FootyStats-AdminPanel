@@ -9,7 +9,11 @@
     <mat-card-content>
       <div class="columns is-multiline">
         <div class="column is-12" *ngFor="let stat of stats">
-          <app-stat-item [stat]="stat"></app-stat-item>
+          <app-stat-item
+            [stat]="stat"
+            [player]="player"
+            [game]="game"
+          ></app-stat-item>
         </div>
         <mat-divider></mat-divider>
       </div>

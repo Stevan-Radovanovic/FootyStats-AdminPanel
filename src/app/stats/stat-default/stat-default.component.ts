@@ -4,6 +4,8 @@ import { StatsHttpService } from 'src/app/shared/services/stats-http.service';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { Subscription } from 'rxjs';
 import { Statistic } from 'src/app/shared/models/statistic.model';
+import { Game } from 'src/app/shared/models/game.model';
+import { Player } from 'src/app/shared/models/player.model';
 
 @Component({
   selector: 'app-stat-default',
@@ -17,7 +19,10 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
     { assists: 1, goals: 1 },
     { assists: 1, goals: 1 },
   ];
+
   subs: Subscription[] = [];
+  player: Player;
+  game: Game;
 
   constructor(
     private modalServ: SessionService,
@@ -26,6 +31,14 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.modalServ.statsDialogRef = this.dialogRef;
+
+    if (this.data.game) {
+      this.game = this.data.game;
+    }
+
+    if (this.data.player) {
+      this.player = this.data.player;
+    }
   }
 
   close() {
