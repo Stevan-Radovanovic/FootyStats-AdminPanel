@@ -11,6 +11,7 @@ import { ContractEditComponent } from '../../player/contract/contract-edit/contr
 import { GameNewComponent } from 'src/app/game/game-new/game-new.component';
 import { GameEditComponent } from 'src/app/game/game-edit/game-edit.component';
 import { GameDeleteComponent } from 'src/app/game/game-delete/game-delete.component';
+import { StatDefaultComponent } from 'src/app/stats/stat-default/stat-default.component';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +33,8 @@ export class SessionService {
   gameNewDialogRef: MatDialogRef<GameNewComponent>;
   gameEditDialogRef: MatDialogRef<GameEditComponent>;
   gameDeleteDialogRef: MatDialogRef<GameDeleteComponent>;
+
+  statsDialogRef: MatDialogRef<StatDefaultComponent>;
 
   constructor() {}
 }

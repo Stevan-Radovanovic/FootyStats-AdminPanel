@@ -1,0 +1,18 @@
+<mat-dialog-content>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Statistics Overview</mat-card-title>
+      <button mat-mini-fab color="primary" id="addButton">
+        <mat-icon>add</mat-icon>
+      </button>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="columns is-multiline">
+        <div class="column is-12" *ngFor="let stat of stats">
+          <app-stat-item [stat]="stat"></app-stat-item>
+        </div>
+        <mat-divider></mat-divider>
+      </div>
+    </mat-card-content>
+  </mat-card>
+</mat-dialog-content>

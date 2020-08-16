@@ -23,6 +23,8 @@ import { ContractEditComponent } from './contract/contract-edit/contract-edit.co
 import { ContractNewComponent } from './contract/contract-new/contract-new.component';
 import { MatDialogModule } from '@angular/material/dialog';
 import { PlayerDeleteComponent } from './player-delete/player-delete.component';
+import { StatsHttpService } from '../shared/services/stats-http.service';
+import { StatsModule } from '../stats/stats.module';
 
 @NgModule({
   declarations: [
@@ -51,6 +53,7 @@ import { PlayerDeleteComponent } from './player-delete/player-delete.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
+    StatsModule,
   ],
   entryComponents: [
     ContractDeleteComponent,
