@@ -1,5 +1,18 @@
-<p>
-  {{ stat.goals }} | {{ stat.assists }} |
-  {{ game ? game.opponentName : stat.opponentName }} |
-  {{ player ? player.fullName : stat.playerName }} |
-</p>
+<mat-card>
+  <h3 style="font-weight: bold;">
+    {{ player ? player.fullName : 'Name Missing' }} vs
+    {{ game ? game.opponentName : 'Name Missing' }}
+  </h3>
+
+  <mat-card-content>
+    <p>Goals: {{ stat.goals }}</p>
+    <p>Assists: {{ stat.assists }}</p>
+  </mat-card-content>
+
+  <button mat-button color="primary" id="editButton">
+    <mat-icon>edit</mat-icon>
+  </button>
+  <button mat-button color="warn" id="deleteButton">
+    <mat-icon>delete</mat-icon>
+  </button>
+</mat-card>
