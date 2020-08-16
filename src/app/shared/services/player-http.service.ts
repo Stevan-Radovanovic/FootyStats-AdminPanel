@@ -4,6 +4,7 @@ import { BehaviorSubject } from 'rxjs';
 import { Player } from '../models/player.model';
 import { SessionService } from './session.service';
 import { ContractHttpService } from './contract-http.service';
+import { Statistic } from '../models/statistic.model';
 
 @Injectable({
   providedIn: 'root',
