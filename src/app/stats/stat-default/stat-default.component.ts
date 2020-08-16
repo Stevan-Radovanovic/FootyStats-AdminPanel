@@ -46,7 +46,13 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.statServ.getStatsByPlayerId(this.player.id);
+    if (this.player) {
+      this.statServ.getStatsByPlayerId(this.player.id);
+    }
+    if (this.game) {
+      this.statServ.getStatsByGameId(this.game.id);
+    }
+
     this.subs.push(
       this.statServ.statsSubject.subscribe((stats) => {
         this.stats = stats;

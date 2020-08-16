@@ -3,6 +3,7 @@ import { Game } from 'src/app/shared/models/game.model';
 import { MatDialog } from '@angular/material/dialog';
 import { GameEditComponent } from '../game-edit/game-edit.component';
 import { GameDeleteComponent } from '../game-delete/game-delete.component';
+import { StatDefaultComponent } from 'src/app/stats/stat-default/stat-default.component';
 
 @Component({
   selector: 'app-game-item',
@@ -27,6 +28,17 @@ export class GameItemComponent implements OnInit {
 
   openDeleteDialog() {
     const dialogRef = this.dialog.open(GameDeleteComponent, {
+      width: '500px',
+      data: { game: this.game },
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log(result);
+    });
+  }
+
+  openStatsDialog() {
+    const dialogRef = this.dialog.open(StatDefaultComponent, {
       width: '500px',
       data: { game: this.game },
     });

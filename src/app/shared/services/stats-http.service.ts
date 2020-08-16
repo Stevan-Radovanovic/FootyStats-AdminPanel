@@ -13,8 +13,18 @@ export class StatsHttpService {
   stats: Statistic[] = [];
 
   getStatsByPlayerId(id: number) {
-    return this.http
+    this.http
       .get('http://localhost:3000/statistics/player-stats/' + id)
+      .subscribe((response: any) => {
+        console.log(response);
+        this.stats = response.stats;
+        this.statsSubject.next(this.stats);
+      });
+  }
+
+  getStatsByGameId(id: number) {
+    this.http
+      .get('http://localhost:3000/statistics/game-stats/' + id)
       .subscribe((response: any) => {
         console.log(response);
         this.stats = response.stats;
