@@ -11,7 +11,12 @@ import { Statistic } from 'src/app/shared/models/statistic.model';
   styleUrls: ['./stat-default.component.css'],
 })
 export class StatDefaultComponent implements OnInit, OnDestroy {
-  stats: Statistic[] = [{ assists: 1, goals: 1 }];
+  stats: Statistic[] = [
+    { assists: 1, goals: 1 },
+    { assists: 1, goals: 1 },
+    { assists: 1, goals: 1 },
+    { assists: 1, goals: 1 },
+  ];
   subs: Subscription[] = [];
 
   constructor(
@@ -28,11 +33,11 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    this.subs.push(
+    /*this.subs.push(
       this.statServ.statsSubject.subscribe((stats) => {
         this.stats = stats;
       })
-    );
+    );*/
   }
 
   ngOnDestroy(): void {

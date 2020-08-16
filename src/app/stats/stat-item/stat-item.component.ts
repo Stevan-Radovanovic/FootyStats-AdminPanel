@@ -9,7 +9,9 @@ import { Statistic } from 'src/app/shared/models/statistic.model';
 export class StatItemComponent implements OnInit {
   @Input() stat: Statistic;
 
-  constructor() {}
+  constructor() {
+    console.log(this.stat);
+  }
 
   ngOnInit(): void {}
 }
