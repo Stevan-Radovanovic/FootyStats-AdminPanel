@@ -4,6 +4,7 @@ import { map } from 'rxjs/operators';
 import { Statistic } from '../models/statistic.model';
 import { HttpClient } from '@angular/common/http';
 import { GameHttpService } from './game-http.service';
+import { SessionService } from './session.service';
 
 @Injectable({
   providedIn: 'root',
@@ -32,5 +33,43 @@ export class StatsHttpService {
       });
   }
 
-  constructor(private http: HttpClient, private gameServ: GameHttpService) {}
+  deleteStat(stat: Statistic) {
+    this.http
+      .delete(
+        'http://localhost:3000/statistics/' + stat.playerId + '&' + stat.gameId
+      )
+      .subscribe((result) => {
+        this.stats = this.stats.filter((st) => {
+          return st !== stat;
+        });
+        this.statsSubject.next(this.stats);
+        this.modalServ.statDeleteBottomSheetRef.dismiss();
+      });
+  }
+
+  updateStat(stat: Statistic) {
+    this.http
+      .put(
+        'http://localhost:3000/statistics/' + stat.playerId + '&' + stat.gameId,
+        {
+          goals: stat.goals,
+          assists: stat.assists,
+        }
+      )
+      .subscribe((result) => {
+        console.log(result);
+        const index = this.stats.findIndex(
+          (st) => st.playerId === stat.playerId && st.gameId === stat.gameId
+        );
+        this.stats[index] = stat;
+        this.statsSubject.next(this.stats);
+        this.modalServ.statEditBottomSheetRef.dismiss();
+      });
+  }
+
+  constructor(
+    private http: HttpClient,
+    private gameServ: GameHttpService,
+    private modalServ: SessionService
+  ) {}
 }
