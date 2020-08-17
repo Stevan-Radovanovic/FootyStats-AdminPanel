@@ -5,6 +5,8 @@ import {
 } from '@angular/material/bottom-sheet';
 import { SessionService } from 'src/app/shared/services/session.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Statistic } from 'src/app/shared/models/statistic.model';
+import { StatsHttpService } from 'src/app/shared/services/stats-http.service';
 
 @Component({
   selector: 'app-stat-edit',
@@ -17,6 +19,7 @@ export class StatEditComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<StatEditComponent>,
     private modalServ: SessionService,
+    private statServ: StatsHttpService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.statEditBottomSheetRef = this.bottomSheetRef;
@@ -31,6 +34,16 @@ export class StatEditComponent implements OnInit {
       goals: new FormControl(this.data.stat.goals, [Validators.required]),
       assists: new FormControl(this.data.stat.assists, [Validators.required]),
     });
+  }
+
+  editStat() {
+    const stat: Statistic = {
+      playerId: this.data.stat.playerId,
+      gameId: this.data.stat.gameId,
+      goals: this.editStatForm.controls.goals.value,
+      assists: this.editStatForm.controls.assists.value,
+    };
+    this.statServ.updateStat(stat);
   }
 
   ngOnInit() {
