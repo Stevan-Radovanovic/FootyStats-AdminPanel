@@ -45,7 +45,9 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
   }
 
   openNewBottomSheet(): void {
-    this.bottomSheet.open(StatNewComponent);
+    this.bottomSheet.open(StatNewComponent, {
+      data: { player: this.data.player, game: this.data.game },
+    });
   }
 
   close() {

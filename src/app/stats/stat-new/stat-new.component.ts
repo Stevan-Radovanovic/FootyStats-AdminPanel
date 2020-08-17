@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
+import { Component, OnInit, Input, Inject } from '@angular/core';
+import {
+  MatBottomSheetRef,
+  MAT_BOTTOM_SHEET_DATA,
+} from '@angular/material/bottom-sheet';
 import { SessionService } from 'src/app/shared/services/session.service';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Statistic } from 'src/app/shared/models/statistic.model';
@@ -26,7 +29,8 @@ export class StatNewComponent implements OnInit {
     private statServ: StatsHttpService,
     private gameServ: GameHttpService,
     private playerServ: PlayerHttpService,
-    private modalServ: SessionService
+    private modalServ: SessionService,
+    @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.statNewBottomSheetRef = this.bottomSheetRef;
   }
@@ -51,8 +55,16 @@ export class StatNewComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.games = this.gameServ.games;
-    this.players = this.playerServ.players;
+    if (this.data.player) {
+      this.games = this.gameServ.games;
+      this.players = [this.data.player];
+    }
+
+    if (this.data.game) {
+      this.players = this.playerServ.players;
+      this.games = [this.data.game];
+    }
+
     this.initForm();
   }
 
