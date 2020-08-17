@@ -15,8 +15,8 @@ Make Games Service [Done]
 Connect to Stats from Games Service [Done]
 Upgrade the StatItem design [Done]
 Adding new Stats
-Editing Stats
-Deleting Stats
+Editing Stats [Done]
+Deleting Stats [Done]
 Player/Game Name Issue Resolve
 Bonuses Bottom Sheet
 Add new Bonus

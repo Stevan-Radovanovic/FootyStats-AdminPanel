@@ -4,6 +4,7 @@ import { StatDefaultComponent } from './stat-default/stat-default.component';
 import { StatItemComponent } from './stat-item/stat-item.component';
 
 import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatSelectModule } from '@angular/material/select';
 import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,6 +34,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     MatDialogModule,
     ReactiveFormsModule,
     MatBottomSheetModule,
+    MatSelectModule,
   ],
   exports: [StatDefaultComponent],
   entryComponents: [
