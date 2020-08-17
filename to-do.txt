@@ -12,5 +12,21 @@ Set update player route [Done]
 Make a contracts server [Done]
 Fix the Update Contract Error [Done]
 Make Games Service [Done]
-Connect to Stats from Games Service
-Upgrade the StatItem design
+Connect to Stats from Games Service [Done]
+Upgrade the StatItem design [Done]
+Adding new Stats
+Editing Stats
+Deleting Stats
+Player/Game Name Issue Resolve
+Bonuses Bottom Sheet
+Add new Bonus
+Edit Bonus
+Delete Bonus
+Loading Spinners
+Home Page Design
+Authentication Form 
+Log Out Button
+Auth and ReverseAuth Guards
+Auth Service
+Connect Guards
+

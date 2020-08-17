@@ -6,6 +6,8 @@ import { Subscription } from 'rxjs';
 import { Statistic } from 'src/app/shared/models/statistic.model';
 import { Game } from 'src/app/shared/models/game.model';
 import { Player } from 'src/app/shared/models/player.model';
+import { StatNewComponent } from '../stat-new/stat-new.component';
+import { MatBottomSheet } from '@angular/material/bottom-sheet';
 
 @Component({
   selector: 'app-stat-default',
@@ -28,6 +30,7 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
     private modalServ: SessionService,
     private statServ: StatsHttpService,
     public dialogRef: MatDialogRef<StatDefaultComponent>,
+    private bottomSheet: MatBottomSheet,
     @Inject(MAT_DIALOG_DATA) public data: any
   ) {
     this.modalServ.statsDialogRef = this.dialogRef;
@@ -39,6 +42,10 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
     if (this.data.player) {
       this.player = this.data.player;
     }
+  }
+
+  openNewBottomSheet(): void {
+    this.bottomSheet.open(StatNewComponent);
   }
 
   close() {

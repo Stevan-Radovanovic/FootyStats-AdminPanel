@@ -12,6 +12,9 @@ import { GameNewComponent } from 'src/app/game/game-new/game-new.component';
 import { GameEditComponent } from 'src/app/game/game-edit/game-edit.component';
 import { GameDeleteComponent } from 'src/app/game/game-delete/game-delete.component';
 import { StatDefaultComponent } from 'src/app/stats/stat-default/stat-default.component';
+import { StatNewComponent } from 'src/app/stats/stat-new/stat-new.component';
+import { StatEditComponent } from 'src/app/stats/stat-edit/stat-edit.component';
+import { StatDeleteComponent } from 'src/app/stats/stat-delete/stat-delete.component';
 
 @Injectable({
   providedIn: 'root',
@@ -35,6 +38,9 @@ export class SessionService {
   gameDeleteDialogRef: MatDialogRef<GameDeleteComponent>;
 
   statsDialogRef: MatDialogRef<StatDefaultComponent>;
+  statNewBottomSheetRef: MatBottomSheetRef<StatNewComponent>;
+  statEditBottomSheetRef: MatBottomSheetRef<StatEditComponent>;
+  statDeleteBottomSheetRef: MatBottomSheetRef<StatDeleteComponent>;
 
   constructor() {}
 }
