@@ -13,6 +13,21 @@ export class StatsHttpService {
   statsSubject = new BehaviorSubject<Statistic[]>([]);
   stats: Statistic[] = [];
 
+  createStat(stat: Statistic) {
+    this.http
+      .post('http://localhost:3000/statistics', {
+        goals: stat.goals,
+        assists: stat.assists,
+        playerId: stat.playerId,
+        gameId: stat.gameId,
+      })
+      .subscribe((response: any) => {
+        this.stats.push(stat);
+        this.statsSubject.next(this.stats);
+        this.modalServ.statNewBottomSheetRef.dismiss();
+      });
+  }
+
   getStatsByPlayerId(id: number) {
     this.http
       .get('http://localhost:3000/statistics/player-stats/' + id)

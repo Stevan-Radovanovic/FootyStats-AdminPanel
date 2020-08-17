@@ -51,7 +51,7 @@ export class StatNewComponent implements OnInit {
       goals: this.newStatForm.controls.goals.value,
       assists: this.newStatForm.controls.assists.value,
     };
-    console.log(stat);
+    this.statServ.createStat(stat);
   }
 
   ngOnInit() {
