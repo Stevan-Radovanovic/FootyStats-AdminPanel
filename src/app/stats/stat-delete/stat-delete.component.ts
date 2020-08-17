@@ -4,6 +4,7 @@ import {
   MAT_BOTTOM_SHEET_DATA,
 } from '@angular/material/bottom-sheet';
 import { SessionService } from 'src/app/shared/services/session.service';
+import { StatsHttpService } from 'src/app/shared/services/stats-http.service';
 
 @Component({
   selector: 'app-stat-delete',
@@ -13,6 +14,7 @@ import { SessionService } from 'src/app/shared/services/session.service';
 export class StatDeleteComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<StatDeleteComponent>,
+    private statServ: StatsHttpService,
     private modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
@@ -23,6 +25,10 @@ export class StatDeleteComponent implements OnInit {
 
   close() {
     this.bottomSheetRef.dismiss();
+  }
+
+  deleteStat() {
+    this.statServ.deleteStat(this.data.stat);
   }
 
   openLink(event: MouseEvent): void {
