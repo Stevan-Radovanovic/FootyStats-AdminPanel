@@ -6,7 +6,7 @@
     <form [formGroup]="newStatForm">
       <mat-form-field>
         <mat-label>Player</mat-label>
-        <mat-select formControlName="player" [(ngModel)]="playerId">
+        <mat-select formControlName="player">
           <mat-option *ngFor="let player of players" [value]="player.id">
             {{ player.fullName }}
           </mat-option>
@@ -14,7 +14,7 @@
       </mat-form-field>
       <mat-form-field>
         <mat-label>Game</mat-label>
-        <mat-select formControlName="game" [(ngModel)]="gameId">
+        <mat-select formControlName="game">
           <mat-option *ngFor="let game of games" [value]="game.id">
             vs. {{ game.opponentName }}
           </mat-option>
