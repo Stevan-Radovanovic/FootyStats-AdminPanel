@@ -13,6 +13,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { StatNewComponent } from './stat-new/stat-new.component';
 import { StatEditComponent } from './stat-edit/stat-edit.component';
 import { StatDeleteComponent } from './stat-delete/stat-delete.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { StatDeleteComponent } from './stat-delete/stat-delete.component';
     MatInputModule,
     MatDividerModule,
     MatDialogModule,
+    ReactiveFormsModule,
     MatBottomSheetModule,
   ],
   exports: [StatDefaultComponent],

@@ -4,6 +4,7 @@ import {
   MatBottomSheetRef,
 } from '@angular/material/bottom-sheet';
 import { SessionService } from 'src/app/shared/services/session.service';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-stat-edit',
@@ -11,6 +12,8 @@ import { SessionService } from 'src/app/shared/services/session.service';
   styleUrls: ['./stat-edit.component.css'],
 })
 export class StatEditComponent implements OnInit {
+  editStatForm: FormGroup;
+
   constructor(
     public bottomSheetRef: MatBottomSheetRef<StatEditComponent>,
     private modalServ: SessionService,
@@ -23,7 +26,16 @@ export class StatEditComponent implements OnInit {
     this.bottomSheetRef.dismiss();
   }
 
-  ngOnInit() {}
+  initForm() {
+    this.editStatForm = new FormGroup({
+      goals: new FormControl(this.data.stat.goals, [Validators.required]),
+      assists: new FormControl(this.data.stat.assists, [Validators.required]),
+    });
+  }
+
+  ngOnInit() {
+    this.initForm();
+  }
 
   openLink(event: MouseEvent): void {
     this.bottomSheetRef.dismiss();
