@@ -15,7 +15,7 @@ export class StatDeleteComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<StatDeleteComponent>,
     private statServ: StatsHttpService,
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.statDeleteBottomSheetRef = this.bottomSheetRef;

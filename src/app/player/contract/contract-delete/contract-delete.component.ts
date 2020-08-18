@@ -15,7 +15,7 @@ export class ContractDeleteComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<ContractDeleteComponent>,
     private contractServ: ContractHttpService,
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.deleteBottomSheetRef = this.bottomSheetRef;

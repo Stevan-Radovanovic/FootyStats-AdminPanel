@@ -19,7 +19,7 @@ export class ContractNewComponent implements OnInit {
   constructor(
     public bottomSheetRef: MatBottomSheetRef<ContractNewComponent>,
     private contractServ: ContractHttpService,
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.newBottomSheetRef = this.bottomSheetRef;

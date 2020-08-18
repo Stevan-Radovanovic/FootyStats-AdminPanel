@@ -14,6 +14,8 @@ import { SharedModule } from './shared/shared.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
+import { MatCardModule } from '@angular/material/card';
+import { MatInputModule } from '@angular/material/input';
 
 @NgModule({
   declarations: [AppComponent, HomePageComponent, AuthComponent],
@@ -27,6 +29,8 @@ import { AuthComponent } from './auth/auth.component';
     MatButtonModule,
     MatToolbarModule,
     MatIconModule,
+    MatCardModule,
+    MatInputModule,
     SharedModule,
   ],
   providers: [],

@@ -29,7 +29,7 @@ export class StatNewComponent implements OnInit {
     private statServ: StatsHttpService,
     private gameServ: GameHttpService,
     private playerServ: PlayerHttpService,
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
     this.modalServ.statNewBottomSheetRef = this.bottomSheetRef;

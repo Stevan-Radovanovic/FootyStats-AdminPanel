@@ -18,7 +18,7 @@ export class StatEditComponent implements OnInit {
 
   constructor(
     public bottomSheetRef: MatBottomSheetRef<StatEditComponent>,
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     private statServ: StatsHttpService,
     @Inject(MAT_BOTTOM_SHEET_DATA) public data: any
   ) {
