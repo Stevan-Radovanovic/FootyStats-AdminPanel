@@ -23,7 +23,7 @@ Add new Bonus
 Edit Bonus
 Delete Bonus
 Loading Spinners
-Home Page Design
+Home Page Design [Done]
 Authentication Form 
 Log Out Button
 Auth and ReverseAuth Guards
