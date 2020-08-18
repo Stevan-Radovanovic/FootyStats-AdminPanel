@@ -15,7 +15,7 @@ import { StatNewComponent } from './stat-new/stat-new.component';
 import { StatEditComponent } from './stat-edit/stat-edit.component';
 import { StatDeleteComponent } from './stat-delete/stat-delete.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [
     StatDefaultComponent,
@@ -35,6 +35,7 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     MatBottomSheetModule,
     MatSelectModule,
+    MatProgressSpinnerModule,
   ],
   exports: [StatDefaultComponent],
   entryComponents: [

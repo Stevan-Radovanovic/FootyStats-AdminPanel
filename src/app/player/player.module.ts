@@ -25,6 +25,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { PlayerDeleteComponent } from './player-delete/player-delete.component';
 import { StatsHttpService } from '../shared/services/stats-http.service';
 import { StatsModule } from '../stats/stats.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -53,6 +54,7 @@ import { StatsModule } from '../stats/stats.module';
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
+    MatProgressSpinnerModule,
     StatsModule,
   ],
   entryComponents: [

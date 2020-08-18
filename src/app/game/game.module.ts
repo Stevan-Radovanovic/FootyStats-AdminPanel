@@ -16,6 +16,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDialogModule } from '@angular/material/dialog';
 import { ReactiveFormsModule } from '@angular/forms';
 import { StatsModule } from '../stats/stats.module';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
   declarations: [
@@ -37,6 +38,7 @@ import { StatsModule } from '../stats/stats.module';
     MatDialogModule,
     MatInputModule,
     StatsModule,
+    MatProgressSpinnerModule,
   ],
   entryComponents: [GameDeleteComponent, GameEditComponent, GameNewComponent],
 })

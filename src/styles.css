@@ -17,3 +17,8 @@ form mat-form-field {
   margin: auto;
   width: 90%;
 }
+
+.spinner-div {
+  display: flex;
+  justify-content: center;
+}

@@ -14,10 +14,10 @@ Fix the Update Contract Error [Done]
 Make Games Service [Done]
 Connect to Stats from Games Service [Done]
 Upgrade the StatItem design [Done]
-Adding new Stats
+Adding new Stats [Done]
 Editing Stats [Done]
 Deleting Stats [Done]
-Player/Game Name Issue Resolve
+Player/Game Name Issue Resolve [Done]
 Bonuses Bottom Sheet
 Add new Bonus
 Edit Bonus
