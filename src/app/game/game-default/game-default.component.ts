@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs';
 import { GameHttpService } from 'src/app/shared/services/game-http.service';
 import { GameNewComponent } from '../game-new/game-new.component';
 import { MatDialog } from '@angular/material/dialog';
+import { SessionService } from 'src/app/shared/services/session.service';
 
 @Component({
   selector: 'app-game-default',
@@ -14,12 +15,18 @@ export class GameDefaultComponent implements OnInit, OnDestroy {
   games: Game[] = [];
   subs: Subscription[] = [];
 
-  constructor(private gameServ: GameHttpService, public dialog: MatDialog) {}
+  constructor(
+    private gameServ: GameHttpService,
+    public dialog: MatDialog,
+    public modalServ: SessionService
+  ) {}
 
   ngOnInit(): void {
+    this.modalServ.gamesSpinnerFlag = true;
     this.subs.push(
       this.gameServ.gameSubject.subscribe((games) => {
         this.games = games;
+        this.modalServ.gamesSpinnerFlag = false;
       })
     );
   }

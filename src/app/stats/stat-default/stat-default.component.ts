@@ -27,7 +27,7 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
   game: Game;
 
   constructor(
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     private statServ: StatsHttpService,
     public dialogRef: MatDialogRef<StatDefaultComponent>,
     private bottomSheet: MatBottomSheet,
@@ -55,6 +55,8 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.modalServ.statsSpinnerFlag = true;
+
     if (this.player) {
       this.statServ.getStatsByPlayerId(this.player.id);
     }
@@ -65,6 +67,7 @@ export class StatDefaultComponent implements OnInit, OnDestroy {
     this.subs.push(
       this.statServ.statsSubject.subscribe((stats) => {
         this.stats = stats;
+        this.modalServ.statsSpinnerFlag = false;
       })
     );
   }

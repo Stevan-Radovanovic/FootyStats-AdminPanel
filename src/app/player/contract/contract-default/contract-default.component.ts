@@ -37,10 +37,12 @@ export class ContractDefaultComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    this.modalServ.gamesSpinnerFlag = true;
     this.contractServ.getContractsByPlayerId(this.data.player.id);
     this.subs.push(
       this.contractServ.contractSubject.subscribe((contracts) => {
         this.contracts = contracts;
+        this.modalServ.gamesSpinnerFlag = false;
       })
     );
   }

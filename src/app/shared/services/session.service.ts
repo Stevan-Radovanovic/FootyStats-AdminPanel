@@ -42,5 +42,10 @@ export class SessionService {
   statEditBottomSheetRef: MatBottomSheetRef<StatEditComponent>;
   statDeleteBottomSheetRef: MatBottomSheetRef<StatDeleteComponent>;
 
+  playersSpinnerFlag: boolean;
+  gamesSpinnerFlag: boolean;
+  contractsSpinnerFlag: boolean;
+  statsSpinnerFlag: boolean;
+
   constructor() {}
 }

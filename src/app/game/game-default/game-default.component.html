@@ -1,7 +1,7 @@
-<div class="spinner-div">
+<div class="spinner-div" *ngIf="modalServ.gamesSpinnerFlag">
   <mat-spinner></mat-spinner>
 </div>
-<div class="columns is-multiline">
+<div class="columns is-multiline" *ngIf="!modalServ.gamesSpinnerFlag">
   <div class="column is-4" *ngFor="let game of games">
     <app-game-item [game]="game"></app-game-item>
   </div>

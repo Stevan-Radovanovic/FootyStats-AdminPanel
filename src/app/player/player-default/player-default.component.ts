@@ -23,9 +23,11 @@ export class PlayerDefaultComponent implements OnInit, OnDestroy {
   ) {}
 
   ngOnInit(): void {
+    this.modalServ.playersSpinnerFlag = true;
     this.subs.push(
       this.playerServ.playerSubject.subscribe((players) => {
         this.players = players;
+        this.modalServ.playersSpinnerFlag = false;
       })
     );
   }
