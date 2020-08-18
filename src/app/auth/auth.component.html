@@ -17,7 +17,12 @@
         </form>
       </mat-card-content>
       <mat-card-actions>
-        <button mat-button color="primary" [disabled]="!authForm.valid">
+        <button
+          mat-button
+          color="primary"
+          [disabled]="!authForm.valid"
+          (click)="logIn()"
+        >
           <mat-icon>check</mat-icon>
           Submit
         </button>
