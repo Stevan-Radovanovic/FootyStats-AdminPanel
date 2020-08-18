@@ -25,7 +25,7 @@ Delete Bonus
 Loading Spinners [Done]
 Home Page Design [Done]
 Authentication Form 
-Log Out Button
+Log Out Button [Done]
 Auth and ReverseAuth Guards
 Auth Service
 Connect Guards
