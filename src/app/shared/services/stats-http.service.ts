@@ -14,6 +14,7 @@ export class StatsHttpService {
   stats: Statistic[] = [];
 
   createStat(stat: Statistic) {
+    this.modalServ.bottomSheetSpinnerFlag = true;
     this.http
       .post('http://localhost:3000/statistics', {
         goals: stat.goals,
@@ -25,6 +26,7 @@ export class StatsHttpService {
         this.stats.push(stat);
         this.statsSubject.next(this.stats);
         this.modalServ.statNewBottomSheetRef.dismiss();
+        this.modalServ.bottomSheetSpinnerFlag = false;
       });
   }
 
@@ -49,6 +51,7 @@ export class StatsHttpService {
   }
 
   deleteStat(stat: Statistic) {
+    this.modalServ.bottomSheetSpinnerFlag = true;
     this.http
       .delete(
         'http://localhost:3000/statistics/' + stat.playerId + '&' + stat.gameId
@@ -59,10 +62,12 @@ export class StatsHttpService {
         });
         this.statsSubject.next(this.stats);
         this.modalServ.statDeleteBottomSheetRef.dismiss();
+        this.modalServ.bottomSheetSpinnerFlag = false;
       });
   }
 
   updateStat(stat: Statistic) {
+    this.modalServ.bottomSheetSpinnerFlag = true;
     this.http
       .put(
         'http://localhost:3000/statistics/' + stat.playerId + '&' + stat.gameId,
@@ -79,6 +84,7 @@ export class StatsHttpService {
         this.stats[index] = stat;
         this.statsSubject.next(this.stats);
         this.modalServ.statEditBottomSheetRef.dismiss();
+        this.modalServ.bottomSheetSpinnerFlag = false;
       });
   }
 

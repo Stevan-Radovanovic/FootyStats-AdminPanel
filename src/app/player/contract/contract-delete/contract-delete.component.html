@@ -3,10 +3,10 @@
     <mat-card-title>Deleting contract!</mat-card-title>
     <mat-card-subtitle>Are you sure?</mat-card-subtitle>
   </mat-card-header>
-  <div class="spinner-div">
+  <div class="spinner-div" *ngIf="modalServ.bottomSheetSpinnerFlag">
     <mat-spinner></mat-spinner>
   </div>
-  <mat-card-actions>
+  <mat-card-actions *ngIf="!modalServ.bottomSheetSpinnerFlag">
     <button mat-button color="warn" (click)="deleteContract()">
       <mat-icon>check</mat-icon>
       Yes

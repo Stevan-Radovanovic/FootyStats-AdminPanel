@@ -48,6 +48,6 @@ export class SessionService {
   statsSpinnerFlag: boolean;
 
   dialogSpinnerFlag: boolean;
-
+  bottomSheetSpinnerFlag: boolean;
   constructor() {}
 }

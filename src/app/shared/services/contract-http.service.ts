@@ -14,6 +14,7 @@ export class ContractHttpService {
   contracts: Contract[] = [];
 
   addNewContract(contract: Contract, id: number) {
+    this.modalServ.bottomSheetSpinnerFlag = true;
     this.http
       .post('http://localhost:3000/contracts', {
         startingDate: contract.startingDate,
@@ -35,6 +36,7 @@ export class ContractHttpService {
   }
 
   deleteContract(contract: Contract) {
+    this.modalServ.bottomSheetSpinnerFlag = true;
     this.http
       .delete('http://localhost:3000/contracts/' + contract.id)
       .subscribe((result) => {
@@ -43,10 +45,12 @@ export class ContractHttpService {
         });
         this.contractSubject.next(this.contracts);
         this.modalServ.deleteBottomSheetRef.dismiss();
+        this.modalServ.bottomSheetSpinnerFlag = true;
       });
   }
 
   updateContract(contract: Contract) {
+    this.modalServ.bottomSheetSpinnerFlag = true;
     this.http
       .put('http://localhost:3000/contracts/' + contract.id, {
         startingDate: contract.startingDate,
@@ -58,6 +62,7 @@ export class ContractHttpService {
         const index = this.contracts.findIndex((co) => co.id === contract.id);
         this.contracts[index] = contract;
         this.contractSubject.next(this.contracts);
+        this.modalServ.bottomSheetSpinnerFlag = false;
         this.modalServ.editBottomSheetRef.dismiss();
       });
   }
