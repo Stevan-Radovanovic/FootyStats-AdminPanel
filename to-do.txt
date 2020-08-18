@@ -22,11 +22,12 @@ Bonuses Bottom Sheet
 Add new Bonus
 Edit Bonus
 Delete Bonus
-Loading Spinners
+Loading Spinners [Done]
 Home Page Design [Done]
 Authentication Form 
 Log Out Button
 Auth and ReverseAuth Guards
 Auth Service
 Connect Guards
+Change spinner logic
 
