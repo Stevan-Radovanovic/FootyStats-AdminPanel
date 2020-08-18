@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { PlayerHttpService } from './shared/services/player-http.service';
 import { GameHttpService } from './shared/services/game-http.service';
+import { AuthService } from './shared/services/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -14,7 +15,8 @@ export class AppComponent {
 
   constructor(
     public playerServ: PlayerHttpService,
-    public gameServ: GameHttpService
+    public gameServ: GameHttpService,
+    public authServ: AuthService
   ) {
     this.playerServ.getPlayers();
     this.gameServ.getGames();

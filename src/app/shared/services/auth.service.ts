@@ -9,6 +9,9 @@ import { Router } from '@angular/router';
 export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
+  isAuth = false;
+  userName = '';
+
   logIn(admin: Admin) {
     this.http
       .post<{ token: string }>('http://localhost:3000/admins/login', {
@@ -18,8 +21,16 @@ export class AuthService {
       .subscribe((result) => {
         console.log(result);
         if (result.token) {
+          this.userName = admin.userName;
+          this.isAuth = true;
           this.router.navigateByUrl('/home');
         }
       });
+  }
+
+  logOut() {
+    this.userName = '';
+    this.isAuth = false;
+    this.router.navigateByUrl('/login');
   }
 }

@@ -5,7 +5,7 @@
     </button>
     <span> Footy Stats</span>
     <span style="flex: 1 1 auto;"></span>
-    <button mat-button>
+    <button mat-button (click)="authServ.logOut()" *ngIf="authServ.isAuth">
       <mat-icon>logout</mat-icon>
       Log Out
     </button>
