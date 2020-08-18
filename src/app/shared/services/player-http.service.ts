@@ -30,6 +30,7 @@ export class PlayerHttpService {
   }
 
   deletePlayer(player: Player) {
+    this.modalServ.dialogSpinnerFlag = true;
     this.http
       .delete('http://localhost:3000/players/' + player.id)
       .subscribe((result) => {
@@ -39,10 +40,12 @@ export class PlayerHttpService {
         console.log(result);
         this.playerSubject.next(this.players);
         this.modalServ.deleteDialogRef.close();
+        this.modalServ.dialogSpinnerFlag = false;
       });
   }
 
   addNewPlayer(player: Player) {
+    this.modalServ.dialogSpinnerFlag = true;
     this.http
       .post('http://localhost:3000/players', {
         fullName: player.fullName,
@@ -59,6 +62,7 @@ export class PlayerHttpService {
   }
 
   updatePlayer(player: Player) {
+    this.modalServ.dialogSpinnerFlag = true;
     this.http
       .put('http://localhost:3000/players/' + player.id, {
         fullName: player.fullName,
@@ -70,6 +74,7 @@ export class PlayerHttpService {
         const index = this.players.findIndex((pl) => pl.id === player.id);
         this.players[index] = player;
         this.playerSubject.next(this.players);
+        this.modalServ.dialogSpinnerFlag = false;
         this.modalServ.editDialogRef.close();
       });
   }

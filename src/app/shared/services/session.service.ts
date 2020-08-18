@@ -47,5 +47,7 @@ export class SessionService {
   contractsSpinnerFlag: boolean;
   statsSpinnerFlag: boolean;
 
+  dialogSpinnerFlag: boolean;
+
   constructor() {}
 }

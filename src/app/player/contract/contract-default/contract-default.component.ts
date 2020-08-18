@@ -18,7 +18,7 @@ export class ContractDefaultComponent implements OnInit, OnDestroy {
 
   constructor(
     private bottomSheet: MatBottomSheet,
-    private modalServ: SessionService,
+    public modalServ: SessionService,
     private contractServ: ContractHttpService,
     public dialogRef: MatDialogRef<ContractDefaultComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any

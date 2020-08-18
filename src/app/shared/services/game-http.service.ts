@@ -24,6 +24,7 @@ export class GameHttpService {
   }
 
   deleteGame(game: Game) {
+    this.modalServ.dialogSpinnerFlag = true;
     this.http
       .delete('http://localhost:3000/games/' + game.id)
       .subscribe((result) => {
@@ -32,11 +33,13 @@ export class GameHttpService {
         });
         console.log(result);
         this.gameSubject.next(this.games);
+        this.modalServ.dialogSpinnerFlag = false;
         this.modalServ.gameDeleteDialogRef.close();
       });
   }
 
   addNewGame(game: Game) {
+    this.modalServ.dialogSpinnerFlag = true;
     this.http
       .post('http://localhost:3000/games', {
         result: game.result,
@@ -48,11 +51,13 @@ export class GameHttpService {
         game.id = response.game.id;
         this.games.push(game);
         this.gameSubject.next(this.games);
+        this.modalServ.dialogSpinnerFlag = false;
         this.modalServ.gameNewDialogRef.close();
       });
   }
 
   updateGame(game: Game) {
+    this.modalServ.dialogSpinnerFlag = true;
     this.http
       .put('http://localhost:3000/games/' + game.id, {
         result: game.result,
@@ -64,6 +69,7 @@ export class GameHttpService {
         const index = this.games.findIndex((pl) => pl.id === game.id);
         this.games[index] = game;
         this.gameSubject.next(this.games);
+        this.modalServ.dialogSpinnerFlag = false;
         this.modalServ.gameEditDialogRef.close();
       });
   }

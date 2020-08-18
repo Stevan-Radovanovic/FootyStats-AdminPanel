@@ -24,6 +24,7 @@ export class ContractHttpService {
       .subscribe((result: { contract: Contract; message: string }) => {
         if (this.modalServ.newDialogRef) {
           this.modalServ.newDialogRef.close();
+          this.modalServ.dialogSpinnerFlag = false;
         }
         if (this.modalServ.newBottomSheetRef) {
           this.modalServ.newBottomSheetRef.dismiss();
