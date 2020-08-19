@@ -1,6 +1,9 @@
 <div class="columns is-centered">
   <div class="column is-6">
-    <mat-card>
+    <div class="spinner-div" *ngIf="modalServ.loginSpinnerFlag">
+      <mat-spinner></mat-spinner>
+    </div>
+    <mat-card *ngIf="!modalServ.loginSpinnerFlag">
       <mat-card-header>
         <mat-card-title>Log in to Footy Stats Admin Panel</mat-card-title>
       </mat-card-header>

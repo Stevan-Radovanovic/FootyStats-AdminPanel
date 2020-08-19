@@ -26,8 +26,7 @@ Loading Spinners [Done]
 Home Page Design [Done]
 Authentication Form [Done]
 Log Out Button [Done]
-Auth and ReverseAuth Guards
-Auth Service
-Connect Guards
-Change spinner logic
+Auth and ReverseAuth Guards [Done]
+Auth Service [Done]
+Connect Guards [Done]
 

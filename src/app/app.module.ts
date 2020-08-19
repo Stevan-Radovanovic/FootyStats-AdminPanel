@@ -16,7 +16,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthComponent } from './auth/auth.component';
 import { MatCardModule } from '@angular/material/card';
 import { MatInputModule } from '@angular/material/input';
-
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 @NgModule({
   declarations: [AppComponent, HomePageComponent, AuthComponent],
   imports: [
@@ -32,6 +32,7 @@ import { MatInputModule } from '@angular/material/input';
     MatCardModule,
     MatInputModule,
     SharedModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

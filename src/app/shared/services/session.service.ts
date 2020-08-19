@@ -46,6 +46,7 @@ export class SessionService {
   gamesSpinnerFlag: boolean;
   contractsSpinnerFlag: boolean;
   statsSpinnerFlag: boolean;
+  loginSpinnerFlag: boolean;
 
   dialogSpinnerFlag: boolean;
   bottomSheetSpinnerFlag: boolean;
