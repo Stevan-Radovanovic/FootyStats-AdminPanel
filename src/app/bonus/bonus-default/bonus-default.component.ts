@@ -14,7 +14,10 @@ import {
   styleUrls: ['./bonus-default.component.css'],
 })
 export class BonusDefaultComponent implements OnInit, OnDestroy {
-  bonuses: Bonus[] = [];
+  bonuses: Bonus[] = [
+    { amount: 1, description: 'asd' },
+    { amount: 1, description: 'asd' },
+  ];
   subs: Subscription[] = [];
 
   constructor(
@@ -31,6 +34,7 @@ export class BonusDefaultComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
+    /*
     this.modalServ.bottomSheetSpinnerFlag = true;
     this.bonusServ.getBonusesByContractId(this.data.contract.id);
     this.subs.push(
@@ -39,6 +43,7 @@ export class BonusDefaultComponent implements OnInit, OnDestroy {
         this.modalServ.bottomSheetSpinnerFlag = false;
       })
     );
+    */
   }
 
   ngOnDestroy(): void {

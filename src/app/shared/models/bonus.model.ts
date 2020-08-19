@@ -4,5 +4,5 @@ export interface Bonus {
   id?: number;
   description: string;
   amount: number;
-  contractId: number;
+  contractId?: number;
 }

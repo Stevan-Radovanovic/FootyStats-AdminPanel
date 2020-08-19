@@ -1,1 +1,17 @@
-<p>bonus-item works!</p>
+<mat-accordion>
+  <mat-expansion-panel>
+    <mat-expansion-panel-header>
+      <mat-panel-title> Amount: {{ bonus.amount }} </mat-panel-title>
+      <mat-panel-description>
+        Expand for Description
+      </mat-panel-description>
+    </mat-expansion-panel-header>
+    <p>Description: {{ bonus.description }}</p>
+    <button mat-button color="accent">
+      <mat-icon>edit</mat-icon>
+    </button>
+    <button mat-button color="warn">
+      <mat-icon>delete</mat-icon>
+    </button>
+  </mat-expansion-panel>
+</mat-accordion>
