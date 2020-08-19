@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { SessionService } from './session.service';
 import { BehaviorSubject } from 'rxjs';
 import { Bonus } from '../models/bonus.model';
+import { NumberFormatStyle } from '@angular/common';
 
 @Injectable({
   providedIn: 'root',
@@ -38,8 +39,8 @@ export class BonusHttpService {
           return bon !== bonus;
         });
         this.bonusSubject.next(this.bonuses);
-        this.modalServ.deleteBottomSheetRef.dismiss();
-        this.modalServ.bottomSheetSpinnerFlag = true;
+        this.modalServ.bonusDeleteBottomSheetRef.dismiss();
+        this.modalServ.bottomSheetSpinnerFlag = false;
       });
   }
 

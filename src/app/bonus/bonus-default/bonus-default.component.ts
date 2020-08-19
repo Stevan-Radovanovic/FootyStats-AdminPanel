@@ -6,6 +6,7 @@ import { BonusHttpService } from 'src/app/shared/services/bonus-http.service';
 import {
   MatBottomSheetRef,
   MAT_BOTTOM_SHEET_DATA,
+  MatBottomSheet,
 } from '@angular/material/bottom-sheet';
 
 @Component({
@@ -21,6 +22,7 @@ export class BonusDefaultComponent implements OnInit, OnDestroy {
   subs: Subscription[] = [];
 
   constructor(
+    private bottomSheet: MatBottomSheet,
     public modalServ: SessionService,
     private bonusServ: BonusHttpService,
     public bottomSheetRef: MatBottomSheetRef<BonusDefaultComponent>,
