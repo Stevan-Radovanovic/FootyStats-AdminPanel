@@ -29,6 +29,7 @@ export class ContractHttpService {
         }
         if (this.modalServ.newBottomSheetRef) {
           this.modalServ.newBottomSheetRef.dismiss();
+          this.modalServ.bottomSheetSpinnerFlag = false;
         }
         this.contracts.push(result.contract);
         this.contractSubject.next(this.contracts);

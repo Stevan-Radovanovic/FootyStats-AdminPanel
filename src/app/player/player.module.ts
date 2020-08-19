@@ -26,6 +26,7 @@ import { PlayerDeleteComponent } from './player-delete/player-delete.component';
 import { StatsHttpService } from '../shared/services/stats-http.service';
 import { StatsModule } from '../stats/stats.module';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BonusModule } from '../bonus/bonus.module';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
     MatDialogModule,
     MatProgressSpinnerModule,
     StatsModule,
+    BonusModule,
   ],
   entryComponents: [
     ContractDeleteComponent,
