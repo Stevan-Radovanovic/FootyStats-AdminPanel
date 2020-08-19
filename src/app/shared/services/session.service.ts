@@ -15,6 +15,7 @@ import { StatDefaultComponent } from 'src/app/stats/stat-default/stat-default.co
 import { StatNewComponent } from 'src/app/stats/stat-new/stat-new.component';
 import { StatEditComponent } from 'src/app/stats/stat-edit/stat-edit.component';
 import { StatDeleteComponent } from 'src/app/stats/stat-delete/stat-delete.component';
+import { BonusDefaultComponent } from 'src/app/bonus/bonus-default/bonus-default.component';
 
 @Injectable({
   providedIn: 'root',
@@ -47,8 +48,10 @@ export class SessionService {
   contractsSpinnerFlag: boolean;
   statsSpinnerFlag: boolean;
   loginSpinnerFlag: boolean;
-
   dialogSpinnerFlag: boolean;
   bottomSheetSpinnerFlag: boolean;
+
+  bonusBottomSheetRef: MatBottomSheetRef<BonusDefaultComponent>;
+
   constructor() {}
 }

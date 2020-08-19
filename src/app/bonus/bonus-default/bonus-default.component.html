@@ -1,1 +1,19 @@
-<p>bonus-default works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Bonus List</mat-card-title>
+    <button mat-mini-fab color="primary" id="addButton">
+      <mat-icon>add</mat-icon>
+    </button>
+  </mat-card-header>
+  <div class="spinner-div" *ngIf="modalServ.bottomSheetSpinnerFlag">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-card-content *ngIf="!modalServ.bottomSheetSpinnerFlag">
+    <div class="columns is-multiline">
+      <div class="column is-12" *ngFor="let bonus of bonuses">
+        <app-bonus-item [bonus]="bonus"></app-bonus-item>
+      </div>
+      <hr />
+    </div>
+  </mat-card-content>
+</mat-card>

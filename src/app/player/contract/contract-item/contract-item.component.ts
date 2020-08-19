@@ -3,6 +3,7 @@ import { Contract } from 'src/app/shared/models/contract.model';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { ContractEditComponent } from '../contract-edit/contract-edit.component';
 import { ContractDeleteComponent } from '../contract-delete/contract-delete.component';
+import { BonusDefaultComponent } from 'src/app/bonus/bonus-default/bonus-default.component';
 
 @Component({
   selector: 'app-contract-item',
@@ -22,6 +23,12 @@ export class ContractItemComponent implements OnInit {
 
   openDeleteBottomSheet(): void {
     this.bottomSheet.open(ContractDeleteComponent, {
+      data: { contract: this.contract },
+    });
+  }
+
+  openBonusBottomSheet(): void {
+    this.bottomSheet.open(BonusDefaultComponent, {
       data: { contract: this.contract },
     });
   }

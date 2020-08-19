@@ -6,6 +6,14 @@ import { BonusNewComponent } from './bonus-new/bonus-new.component';
 import { BonusEditComponent } from './bonus-edit/bonus-edit.component';
 import { BonusDeleteComponent } from './bonus-delete/bonus-delete.component';
 
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatInputModule } from '@angular/material/input';
+import { MatCardModule } from '@angular/material/card';
+import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
+
 @NgModule({
   declarations: [
     BonusDefaultComponent,
@@ -14,7 +22,16 @@ import { BonusDeleteComponent } from './bonus-delete/bonus-delete.component';
     BonusEditComponent,
     BonusDeleteComponent,
   ],
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    MatIconModule,
+    MatInputModule,
+    MatBottomSheetModule,
+    MatCardModule,
+    MatButtonModule,
+    MatProgressSpinnerModule,
+    MatExpansionModule,
+  ],
   exports: [BonusDefaultComponent],
   entryComponents: [BonusDefaultComponent],
 })
