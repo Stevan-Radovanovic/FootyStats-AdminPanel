@@ -1,7 +1,10 @@
 <div id="container" style="min-height: 100vh; margin: 0;">
   <mat-toolbar color="primary" style="position: sticky; top: 0; z-index: 1;">
-    <button mat-icon-button (click)="toggleSideMenu()">
+    <button mat-icon-button (click)="toggleSideMenu()" *ngIf="authServ.isAuth">
       <mat-icon>menu</mat-icon>
+    </button>
+    <button mat-icon-button *ngIf="!authServ.isAuth">
+      <mat-icon>circle</mat-icon>
     </button>
     <span> Footy Stats</span>
     <span style="flex: 1 1 auto;"></span>
