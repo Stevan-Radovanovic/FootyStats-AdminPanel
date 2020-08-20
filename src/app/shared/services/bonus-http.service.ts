@@ -50,6 +50,7 @@ export class BonusHttpService {
       .put('http://localhost:3000/bonuses/' + bonus.id, {
         amount: bonus.amount,
         description: bonus.description,
+        contractId: bonus.contractId,
       })
       .subscribe((result) => {
         console.log(result);
@@ -57,7 +58,7 @@ export class BonusHttpService {
         this.bonuses[index] = bonus;
         this.bonusSubject.next(this.bonuses);
         this.modalServ.bottomSheetSpinnerFlag = false;
-        this.modalServ.editBottomSheetRef.dismiss();
+        this.modalServ.bonusEditBottomSheetRef.dismiss();
       });
   }
 

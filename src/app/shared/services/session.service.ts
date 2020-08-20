@@ -18,6 +18,7 @@ import { StatDeleteComponent } from 'src/app/stats/stat-delete/stat-delete.compo
 import { BonusDefaultComponent } from 'src/app/bonus/bonus-default/bonus-default.component';
 import { BonusDeleteComponent } from 'src/app/bonus/bonus-delete/bonus-delete.component';
 import { BonusNewComponent } from 'src/app/bonus/bonus-new/bonus-new.component';
+import { BonusEditComponent } from 'src/app/bonus/bonus-edit/bonus-edit.component';
 
 @Injectable({
   providedIn: 'root',
@@ -56,6 +57,7 @@ export class SessionService {
   bonusBottomSheetRef: MatBottomSheetRef<BonusDefaultComponent>;
   bonusDeleteBottomSheetRef: MatBottomSheetRef<BonusDeleteComponent>;
   bonusNewBottomSheetRef: MatBottomSheetRef<BonusNewComponent>;
+  bonusEditBottomSheetRef: MatBottomSheetRef<BonusEditComponent>;
 
   constructor() {}
 }

@@ -4,6 +4,7 @@ import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { SessionService } from 'src/app/shared/services/session.service';
 import { BonusHttpService } from 'src/app/shared/services/bonus-http.service';
 import { BonusDeleteComponent } from '../bonus-delete/bonus-delete.component';
+import { BonusEditComponent } from '../bonus-edit/bonus-edit.component';
 
 @Component({
   selector: 'app-bonus-item',
@@ -21,6 +22,12 @@ export class BonusItemComponent implements OnInit {
 
   openDeleteBottomSheet(): void {
     this.bottomSheet.open(BonusDeleteComponent, {
+      data: { bonus: this.bonus },
+    });
+  }
+
+  openEditBottomSheet(): void {
+    this.bottomSheet.open(BonusEditComponent, {
       data: { bonus: this.bonus },
     });
   }

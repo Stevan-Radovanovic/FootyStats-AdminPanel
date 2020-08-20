@@ -7,7 +7,7 @@
       </mat-panel-description>
     </mat-expansion-panel-header>
     <p>Description: {{ bonus.description }}</p>
-    <button mat-button color="accent">
+    <button mat-button color="accent" (click)="openEditBottomSheet()">
       <mat-icon>edit</mat-icon>
     </button>
     <button mat-button color="warn" (click)="openDeleteBottomSheet()">
