@@ -1,1 +1,35 @@
-<p>bonus-new works!</p>
+<mat-card>
+  <mat-card-header>
+    <mat-card-title>Adding a new bonus!</mat-card-title>
+  </mat-card-header>
+  <div class="spinner-div" *ngIf="modalServ.bottomSheetSpinnerFlag">
+    <mat-spinner></mat-spinner>
+  </div>
+  <mat-card-content *ngIf="!modalServ.bottomSheetSpinnerFlag">
+    <form [formGroup]="newBonusForm">
+      <mat-form-field>
+        <mat-label>Amount</mat-label>
+        <input matInput type="number" formControlName="amount" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Description</mat-label>
+        <textarea matInput formControlName="description"></textarea>
+      </mat-form-field>
+    </form>
+  </mat-card-content>
+  <mat-card-actions>
+    <button
+      mat-button
+      color="primary"
+      (click)="addNewBonus()"
+      [disabled]="!newBonusForm.valid"
+    >
+      <mat-icon>save</mat-icon>
+      Save
+    </button>
+    <button mat-button color="warn" (click)="close()">
+      <mat-icon>not_interested</mat-icon>
+      Quit
+    </button>
+  </mat-card-actions>
+</mat-card>

@@ -23,7 +23,7 @@ export class BonusHttpService {
         contractId: bonus.contractId,
       })
       .subscribe((result: { bonus: Bonus; message: string }) => {
-        this.modalServ.newBottomSheetRef.dismiss();
+        this.modalServ.bonusNewBottomSheetRef.dismiss();
         this.modalServ.bottomSheetSpinnerFlag = false;
         this.bonuses.push(result.bonus);
         this.bonusSubject.next(this.bonuses);

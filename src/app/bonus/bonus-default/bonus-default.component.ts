@@ -8,6 +8,7 @@ import {
   MAT_BOTTOM_SHEET_DATA,
   MatBottomSheet,
 } from '@angular/material/bottom-sheet';
+import { BonusNewComponent } from '../bonus-new/bonus-new.component';
 
 @Component({
   selector: 'app-bonus-default',
@@ -15,10 +16,7 @@ import {
   styleUrls: ['./bonus-default.component.css'],
 })
 export class BonusDefaultComponent implements OnInit, OnDestroy {
-  bonuses: Bonus[] = [
-    { amount: 1, description: 'asd' },
-    { amount: 1, description: 'asd' },
-  ];
+  bonuses: Bonus[] = [];
   subs: Subscription[] = [];
 
   constructor(
@@ -36,7 +34,6 @@ export class BonusDefaultComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    /*
     this.modalServ.bottomSheetSpinnerFlag = true;
     this.bonusServ.getBonusesByContractId(this.data.contract.id);
     this.subs.push(
@@ -45,7 +42,12 @@ export class BonusDefaultComponent implements OnInit, OnDestroy {
         this.modalServ.bottomSheetSpinnerFlag = false;
       })
     );
-    */
+  }
+
+  openNewBottomSheet(): void {
+    this.bottomSheet.open(BonusNewComponent, {
+      data: { contract: this.data.contract },
+    });
   }
 
   ngOnDestroy(): void {

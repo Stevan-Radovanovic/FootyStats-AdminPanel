@@ -14,6 +14,7 @@ import { MatBottomSheetModule } from '@angular/material/bottom-sheet';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
 import { SharedModule } from '../shared/shared.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { SharedModule } from '../shared/shared.module';
     MatProgressSpinnerModule,
     MatExpansionModule,
     SharedModule,
+    ReactiveFormsModule,
   ],
   exports: [BonusDefaultComponent],
   entryComponents: [BonusDefaultComponent],
