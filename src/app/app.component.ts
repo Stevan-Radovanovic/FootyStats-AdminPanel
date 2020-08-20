@@ -18,6 +18,7 @@ export class AppComponent {
     public gameServ: GameHttpService,
     public authServ: AuthService
   ) {
+    this.authServ.autoLogIn();
     this.playerServ.getPlayers();
     this.gameServ.getGames();
   }
